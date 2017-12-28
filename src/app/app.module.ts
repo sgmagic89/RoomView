@@ -3,10 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { RoutingModule } from './app.routing';
-import { SharedModule } from './Shared/shared.module';
-import { PortalModule } from './Core/Portal/portal.module';
-import { AuthenticationModule } from './Core/Authentication/authentication.module';
-
+import { SharedModule } from "./shared/shared.module";
+import { LayoutModule } from "./layout/layout.module";
+import { AuthenticationModule } from "./authentication/authentication.module";
 
 @NgModule({
   declarations: [
@@ -17,7 +16,7 @@ import { AuthenticationModule } from './Core/Authentication/authentication.modul
     BrowserAnimationsModule,
     RoutingModule,
     SharedModule.forRoot(),
-    PortalModule,
+    LayoutModule,
     AuthenticationModule
   ],
   providers: [],

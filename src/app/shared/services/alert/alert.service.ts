@@ -1,10 +1,9 @@
-import { Alert, AlertType } from '../Models/alert.model';
 import { HostListener, Injectable } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
-
 import { Model, ModelFactory } from 'ngx-model';
+import { Alert, AlertType } from "../../models/alert.model";
 
 @Injectable()
 export class AlertService {

@@ -1,15 +1,15 @@
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Model, ModelFactory } from 'ngx-model';
-import { Errors } from '../../../../Shared/Models/error.model';
 import { Observable } from 'rxjs/Observable';
-import { AuthenticationService } from '../../Service/authentication.service';
 import { CustomValidators } from 'ng2-validation';
+import { AuthenticationService } from '../../service/authentication.service';
+import { Errors } from "../../../shared/models/error.model";
 
 @Component({
   selector: 'app-forgotpassword',
-  templateUrl: './ForgotPassword.component.html',
-  styleUrls: ['./ForgotPassword.component.scss']
+  templateUrl: './forgotpassword.component.html',
+  styleUrls: ['./forgotpassword.component.scss']
 })
 export class ForgotPasswordComponent implements OnInit {
   private form: FormGroup;

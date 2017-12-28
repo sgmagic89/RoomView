@@ -1,11 +1,9 @@
-import { IUser } from '../../Features/usermanagement/Model/user.model';
 import { Observable } from 'rxjs/Observable';
 import { Headers, Http, Request, RequestMethod, Response } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { AccountUrl } from './api.settings';
 import 'rxjs/add/operator/map';
-import { LocalStorageService } from '../../Shared/Services/localstorage.service';
-
+import { LocalStorageService } from "../localstorage/localstorage.service";
 @Injectable()
 export class ApiService {
 

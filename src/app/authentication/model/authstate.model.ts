@@ -1,4 +1,5 @@
-import { IUser } from '../../../Features/usermanagement/Model/user.model';
+
+import { IUser } from "../../layout/childmodules/usermanagement/model/user.model";
 
 export interface AuthState {
     user: IUser;

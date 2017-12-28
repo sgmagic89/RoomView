@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from '../../Service/authentication.service';
-import { IUser } from '../../../../Features/usermanagement/Model/user.model';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { CustomValidators } from 'ng2-validation';
 import { ModelFactory, Model } from 'ngx-model';
 import { Observable } from 'rxjs/Observable';
-import { Errors } from '../../../../Shared/Models/error.model';
-
+import { Errors } from "../../../shared/models/error.model";
+import { AuthenticationService } from "../../service/authentication.service";
+import { IUser } from "../../../layout/childmodules/usermanagement/model/user.model";
 @Component({
   selector: 'app-login',
-  templateUrl: './Login.component.html',
-  styleUrls: ['./Login.component.scss']
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
 

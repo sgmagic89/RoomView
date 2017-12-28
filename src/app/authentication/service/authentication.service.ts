@@ -1,15 +1,13 @@
 import { Router } from '@angular/router';
-
 import { Injectable } from '@angular/core';
-import { ApiService } from '../../Api/api.service';
-import { IUser } from '../../../Features/usermanagement/Model/user.model';
-import { AuthState, initAuthState } from '../Model/authstate.model';
 import { Observable } from 'rxjs/Observable';
 import { ModelFactory, Model } from 'ngx-model';
 import { Subscription } from 'rxjs/Subscription';
-import { LocalStorageService } from '../../../Shared/Services/localstorage.service';
-import { AlertService } from '../../../Shared/Services/alert.service';
-
+import { AuthState, initAuthState } from "../model/authstate.model";
+import { ApiService } from "../../shared/services/api/api.service";
+import { LocalStorageService } from "../../shared/services/localstorage/localstorage.service";
+import { AlertService } from "../../shared/services/alert/alert.service";
+import { IUser } from "../../layout/childmodules/usermanagement/model/user.model";
 @Injectable()
 export class AuthenticationService {
 

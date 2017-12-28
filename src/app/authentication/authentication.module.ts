@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthenticationService } from './Service/authentication.service';
-import { LoginComponent } from './Component/Login/Login.component';
 import { AuthRoutingModule } from './authentication.routing';
-import { SharedModule } from '../../Shared/shared.module';
-import { ForgotPasswordComponent } from './Component/ForgotPassword/ForgotPassword.component';
+import { SharedModule } from "../shared/shared.module";
+import { LoginComponent } from "./component/login/login.component";
+import { ForgotPasswordComponent } from "./component/forgotpassword/forgotpassword.component";
+import { AuthenticationService } from "./service/authentication.service";
 
 @NgModule({
   imports: [

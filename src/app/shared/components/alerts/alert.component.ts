@@ -1,7 +1,6 @@
 import { Component, HostListener, Input, OnDestroy, OnInit } from '@angular/core';
-import { Alert, AlertType } from '../../Models/alert.model';
-import { AlertService } from '../../Services/alert.service';
-
+import { Alert, AlertType } from "../../models/alert.model";
+import { AlertService } from "../../services/alert/alert.service";
 
 @Component({
     moduleId: module.id,

@@ -1,16 +1,17 @@
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from './Core/Authentication/Service/authguard.service';
+import { AuthGuard } from "./authentication/service/authguard.service";
+import { LayoutComponent } from "./layout/component/layout.component";
 
 const appRoutes: Routes = [
 {
     path: 'authentication',
-    loadChildren: './Core/Authentication/authentication.module#AuthenticationModule',
+    loadChildren: './authentication/authentication.module#AuthenticationModule',
 },
 {
     path: 'portal',
-    loadChildren: './Core/Portal/portal.module#PortalModule',
+    loadChildren: './layout/layout.module#LayoutModule',
     canActivate: [AuthGuard]
 },
 {
