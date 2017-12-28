@@ -1,0 +1,33 @@
+
+.rightNavBar {
+    width: 100px;
+    height: 100%;
+    color: white;
+    background: #191919;
+    margin-left: 1rem;
+    margin-top: 5px;
+}
+
+.rightNavActions {
+    padding-top: 1rem;
+    padding-bottom: -1rem;
+}
+
+
+i.fa {
+    font-size: 20px;
+  display: inline-block;
+  border-radius: 25px;
+  box-shadow: 0px 0px 1px 3px rgba(255, 255, 255, 0.644);
+  padding: 0.5em 0.6em;
+}
+
+i.fa-podcast {
+    box-shadow:  0 0px 7px 4px rgba(255, 238, 0, 0.479);
+}
+
+
+i.fa:hover{
+  box-shadow: 0 0px 7px 4px rgba(255, 238, 0, 0.479);
+}
+

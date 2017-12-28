@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded">
+    <a class="navbar-brand" href="#">
+        <img src="/assets/logo.png" width="160" height="40" alt="">
+      </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul #mainMenuItems class="navbar-nav mr-auto">
+        <li class="nav-item active" (click)="clickedLink($event)">
+          <a class="nav-link fa fa-tachometer"  [routerLink]="['/dashboard','control']">
+          </a>
+          <a class="nav-link" [routerLink]="['/dashboard','control']">Control</a>
+        </li>
+        <li class="nav-item" (click)="clickedLink($event)">
+            <a class="nav-link fa fa-podcast" [routerLink]="['/dashboard','provision']">
+            </a>
+          <a class="nav-link"  [routerLink]="['/dashboard','provision']">Provision</a>
+        </li>
+        <li class="nav-item" (click)="clickedLink($event)">
+            <a class="nav-link fa fa-users"  [routerLink]="['/dashboard','users']">
+              </a>
+            <a class="nav-link" [routerLink]="['/dashboard','users']">Users</a>
+        </li>
+        <li class="nav-item" (click)="clickedLink($event)">
+            <a class="nav-link fa fa-microchip" [routerLink]="['/dashboard','firmware']">
+              </a>
+            <a class="nav-link" [routerLink]="['/dashboard','firmware']">Firmware</a>
+        </li>
+        <li class="nav-item" (click)="clickedLink($event)">
+            <a class="nav-link fa fa-cog" [routerLink]="['/dashboard','configuration']">
+              </a>
+            <a class="nav-link" [routerLink]="['/dashboard','configuration']">Configuration</a>
+        </li>
+      </ul>
+      
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown dropdown-pull-right">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-user" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Profile</a>
+            <div class="dropdown-divider"></div>
+
+            <a class="dropdown-item" [routerLink]="['/login']">
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                Signout</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>

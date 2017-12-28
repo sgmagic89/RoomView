@@ -1,0 +1,34 @@
+<div class="fullHW">
+<div class="container card"
+fxFlex.xl="20" 
+fxFlex.lg="25" 
+fxFlex.md="30" 
+fxFlex.sm="60" 
+fxFlex.xs="90"
+fxLayout="column"
+fxLayoutAlign="center"
+fxLayoutGap="20px">
+<div fxLayout="column" fxLayoutAlign="center" >
+  <img class="logo" src="/assets/logo.png" />
+  <span class="formHeading">Enter your credentials</span>
+</div>
+
+<form [formGroup]="form" (ngSubmit)="login()">
+  <input id="email" type="text" class="form-control" placeholder="Email" 
+  [formControl]="emailFormControl" 
+  [appFieldValidator]="emailFormControl"
+  [errorsModel] = "errorsmodel" />
+  <span class="formError" *ngIf="emailFormControl.touched && emailFormControl.errors">{{errors.emailError}}</span>
+
+  <input id="pass" type="password" class="form-control" placeholder="Password" 
+  [formControl]="passwordFormControl" 
+  [appFieldValidator]="passwordFormControl"
+  [errorsModel] = "errorsmodel" />
+  <span class="formError" *ngIf="passwordFormControl.touched && passwordFormControl.errors">{{errors.passwordError}}</span>
+  <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Login</button>
+</form>
+  
+
+
+</div>
+</div>

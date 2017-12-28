@@ -1,0 +1,37 @@
+.container {
+    background: hsla(0, 0%, 0%, 0.849);
+    padding: 10px;
+    height: 400px;
+    vertical-align: center;
+    padding: 20px;
+    box-shadow: 0px 0px 200px 30px rgba(255, 238, 0, 0.322), 0px 0px 200px 30px rgba(255, 238, 0, 0.322);
+}
+
+.fullHW{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background: black;
+}
+
+.logo {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 40px;
+    align-self: center
+}
+
+.formHeading {
+    color: white;
+}
+
+.btn-primary {
+margin-top: 30px;
+background: rgb(255, 242, 0);
+color: black;
+border-color: rgb(255, 242, 0);
+width: 100%;
+}
+
