@@ -6,13 +6,13 @@ fxFlex.md="30"
 fxFlex.sm="60" 
 fxFlex.xs="90"
 fxLayout="column"
-fxLayoutAlign="center"
+
 fxLayoutGap="20px">
-<div fxLayout="column" fxLayoutAlign="center" >
+<div class="loginHeader" fxLayout="column" fxLayoutAlign="center" >
   <img class="logo" src="/assets/logo.png" />
-  <span class="formHeading">Enter your credentials</span>
 </div>
 
+<div class="loginForm">
 <form [formGroup]="form" (ngSubmit)="login()">
   <input id="email" type="text" class="form-control" placeholder="Email" 
   [formControl]="emailFormControl" 
@@ -25,10 +25,16 @@ fxLayoutGap="20px">
   [appFieldValidator]="passwordFormControl"
   [errorsModel] = "errorsmodel" />
   <span class="formError" *ngIf="passwordFormControl.touched && passwordFormControl.errors">{{errors.passwordError}}</span>
+  
+  <div class="forgotpassword">
+    <a [routerLink]="['/authentication','forgotpassword']">Forgot Password?</a>
+  </div>
+  
+  
   <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Login</button>
 </form>
   
-
+</div>
 
 </div>
 </div>
