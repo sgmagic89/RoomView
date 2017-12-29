@@ -1,6 +1,4 @@
-
-import { IUser } from "../../layout/childmodules/usermanagement/model/user.model";
-
+import { IUser } from '../../layout/model/user.model';
 export interface AuthState {
     user: IUser;
     isLoggedIn: boolean;

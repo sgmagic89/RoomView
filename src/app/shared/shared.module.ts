@@ -6,17 +6,17 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { TreeModule } from 'angular-tree-component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { NavbarComponent } from "./components/navbar/navbar.component";
-import { LeftnavbarComponent } from "./components/leftnavbar/leftnavbar.component";
-import { RightnavbarComponent } from "./components/rightnavbar/rightnavbar.component";
-import { AppValidateDirective } from "./directives/validation.directive";
-import { AlertComponent } from "./components/alerts/alert.component";
-import { RouterModule } from "@angular/router";
-import { NgxModelModule } from "ngx-model";
-import { ApiService } from "./services/api/api.service";
-import { LocalStorageService } from "./services/localstorage/localstorage.service";
-import { AuthGuard } from "../authentication/service/authguard.service";
-import { AlertService } from "./services/alert/alert.service";
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { LeftnavbarComponent } from './components/leftnavbar/leftnavbar.component';
+import { RightnavbarComponent } from './components/rightnavbar/rightnavbar.component';
+import { AppValidateDirective } from './directives/validation.directive';
+import { AlertComponent } from './components/alerts/alert.component';
+import { RouterModule } from '@angular/router';
+import { NgxModelModule } from 'ngx-model';
+import { ApiService } from './services/api/api.service';
+import { LocalStorageService } from './services/localstorage/localstorage.service';
+import { AuthGuard } from '../authentication/service/authguard.service';
+import { AlertService } from './services/alert/alert.service';
 
 @NgModule({
   declarations: [

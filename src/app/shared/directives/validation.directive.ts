@@ -2,7 +2,7 @@
 import { AbstractControl, FormControl } from '@angular/forms';
 import { Directive, HostListener, Input} from '@angular/core';
 import { Model } from 'ngx-model';
-import { Errors } from "../models/error.model";
+import { Errors } from '../models/error.model';
 
 @Directive({ selector: '[appFieldValidator]' })
 export class AppValidateDirective {

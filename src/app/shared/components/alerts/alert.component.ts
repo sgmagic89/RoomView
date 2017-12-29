@@ -1,6 +1,6 @@
 import { Component, HostListener, Input, OnDestroy, OnInit } from '@angular/core';
-import { Alert, AlertType } from "../../models/alert.model";
-import { AlertService } from "../../services/alert/alert.service";
+import { AlertService } from '../../services/alert/alert.service';
+import { Alert, AlertType } from '../../models/alert.model';
 
 @Component({
     moduleId: module.id,
@@ -29,7 +29,7 @@ export class AlertComponent implements OnInit {
             }
 
             // add alert to array
-            this.visible = true
+            this.visible = true;
             this.alert = alert;
 
         });

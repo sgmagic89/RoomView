@@ -4,7 +4,7 @@ import { Model, ModelFactory } from 'ngx-model';
 import { Observable } from 'rxjs/Observable';
 import { CustomValidators } from 'ng2-validation';
 import { AuthenticationService } from '../../service/authentication.service';
-import { Errors } from "../../../shared/models/error.model";
+import { Errors } from '../../../shared/models/error.model';
 
 @Component({
   selector: 'app-forgotpassword',

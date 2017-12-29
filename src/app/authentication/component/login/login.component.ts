@@ -3,9 +3,10 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 import { CustomValidators } from 'ng2-validation';
 import { ModelFactory, Model } from 'ngx-model';
 import { Observable } from 'rxjs/Observable';
-import { Errors } from "../../../shared/models/error.model";
-import { AuthenticationService } from "../../service/authentication.service";
-import { IUser } from "../../../layout/childmodules/usermanagement/model/user.model";
+import { Errors } from '../../../shared/models/error.model';
+import { AuthenticationService } from '../../service/authentication.service';
+import { IUser } from '../../../layout/model/user.model';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
