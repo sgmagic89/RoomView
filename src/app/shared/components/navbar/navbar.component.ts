@@ -14,15 +14,4 @@ export class NavbarComponent implements OnInit {
     console.log(this.mainMenu.nativeElement.children);
   }
 
-  clickedLink(e) {
-    const element = e.srcElement;
-    console.log(element.parentElement);
-    for (let i = 0; i < element.parentElement.parentElement.children.length ; i++) {
-      if (element.parentElement.parentElement.children[i].classList.contains('active')) {
-        element.parentElement.parentElement.children[i].classList.remove('active');
-      }
-    }
-    element.parentElement.classList.add('active');
-  }
-
 }

@@ -5,22 +5,13 @@ import { AuthGuard } from './authentication/services/authguard.service';
 
 const appRoutes: Routes = [
 {
-    path: 'signin',
-    loadChildren: './authentication/authentication.module#AuthenticationModule',
-},
-{
     path: 'portal',
     loadChildren: './layout/layout.module#LayoutModule',
     canActivate: [AuthGuard]
 },
 {
     path: '',
-    redirectTo: 'signin',
-    pathMatch: 'full'
-},
-{
-    path: '**',
-    redirectTo: 'signin',
+    loadChildren: './authentication/authentication.module#AuthenticationModule',
     pathMatch: 'full'
 }
 ];
