@@ -3,11 +3,11 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { ModelFactory, Model } from 'ngx-model';
 import { Subscription } from 'rxjs/Subscription';
-import { AuthState, initAuthState } from '../model/authstate.model';
 import { ApiService } from '../../shared/services/api/api.service';
 import { LocalStorageService } from '../../shared/services/localstorage/localstorage.service';
 import { AlertService } from '../../shared/services/alert/alert.service';
-import { IUser } from '../../layout/model/user.model';
+import { IUser } from '../../layout/models/user/user.model';
+import { AuthState, initAuthState } from '../models/authstate.model';
 
 @Injectable()
 export class AuthenticationService {

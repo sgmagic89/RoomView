@@ -1,11 +1,11 @@
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from './authentication/service/authguard.service';
+import { AuthGuard } from './authentication/services/authguard.service';
 
 const appRoutes: Routes = [
 {
-    path: 'authentication',
+    path: 'signin',
     loadChildren: './authentication/authentication.module#AuthenticationModule',
 },
 {
@@ -15,12 +15,13 @@ const appRoutes: Routes = [
 },
 {
     path: '',
-    redirectTo: 'authentication',
+    redirectTo: 'signin',
     pathMatch: 'full'
 },
 {
     path: '**',
-    redirectTo: 'authentication'
+    redirectTo: 'signin',
+    pathMatch: 'full'
 }
 ];
 

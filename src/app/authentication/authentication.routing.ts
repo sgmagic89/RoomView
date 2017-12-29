@@ -1,26 +1,17 @@
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './component/login/login.component';
-import { ForgotPasswordComponent } from './component/forgotpassword/forgotpassword.component';
+import { LoginComponent } from './components/login/Login.component';
+import { ForgotPasswordComponent } from './components/forgotpassword/forgotpassword.component';
 
 const appRoutes: Routes = [
-{
-    path: 'login',
-    component: LoginComponent
-},
 {
     path: 'forgotpassword',
     component: ForgotPasswordComponent
 },
 {
     path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-},
-{
-    path: '**',
-    redirectTo: 'login'
+    component: LoginComponent
 }
 ];
 

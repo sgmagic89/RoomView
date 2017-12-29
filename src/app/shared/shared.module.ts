@@ -15,8 +15,8 @@ import { RouterModule } from '@angular/router';
 import { NgxModelModule } from 'ngx-model';
 import { ApiService } from './services/api/api.service';
 import { LocalStorageService } from './services/localstorage/localstorage.service';
-import { AuthGuard } from '../authentication/service/authguard.service';
 import { AlertService } from './services/alert/alert.service';
+import { AuthGuard } from '../authentication/services/authguard.service';
 
 @NgModule({
   declarations: [

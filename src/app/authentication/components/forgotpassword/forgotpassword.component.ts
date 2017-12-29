@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Model, ModelFactory } from 'ngx-model';
 import { Observable } from 'rxjs/Observable';
 import { CustomValidators } from 'ng2-validation';
-import { AuthenticationService } from '../../service/authentication.service';
 import { Errors } from '../../../shared/models/error.model';
+import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-forgotpassword',

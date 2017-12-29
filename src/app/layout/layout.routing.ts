@@ -1,12 +1,13 @@
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from '../authentication/service/authguard.service';
-import { LayoutComponent } from './component/layout.component';
-import { ControlComponent } from './component/control/component/control.component';
-import { ProvisionComponent } from './component/provision/component/provision.component';
-import { ConfigurationComponent } from './component/configuration/component/configuration.component';
-import { UsermanagementComponent } from './component/usermanagement/component/usermanagement.component';
+import { LayoutComponent } from './layout.component';
+import { ControlComponent } from './components/control/control.component';
+import { ProvisionComponent } from './components/provision/provision.component';
+import { ConfigurationComponent } from './components/configuration/configuration.component';
+import { UsermanagementComponent } from './components/usermanagement/usermanagement.component';
+import { AuthGuard } from '../authentication/services/authguard.service';
+import { FirmwareupdateComponent } from './components/firmwareupdate/firmwareupdate.component';
 
 const appRoutes: Routes = [
     {
@@ -31,6 +32,11 @@ const appRoutes: Routes = [
             {
                 path: 'usermanager',
                 component: UsermanagementComponent,
+                canActivateChild: [AuthGuard]
+            },
+            {
+                path: 'firmwareupdate',
+                component: FirmwareupdateComponent,
                 canActivateChild: [AuthGuard]
             },
             {

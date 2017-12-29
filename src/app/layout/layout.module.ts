@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
-import { LayoutComponent } from './component/layout.component';
 import { SharedModule } from '../shared/shared.module';
 import { LayoutRoutingModule } from './layout.routing';
-import { ControlComponent } from './component/control/component/control.component';
-import { ProvisionComponent } from './component/provision/component/provision.component';
-import { UsermanagementComponent } from './component/usermanagement/component/usermanagement.component';
-import { ConfigurationComponent } from './component/configuration/component/configuration.component';
+import { LayoutComponent } from './layout.component';
+import { ControlComponent } from './components/control/control.component';
+import { ProvisionComponent } from './components/provision/provision.component';
+import { UsermanagementComponent } from './components/usermanagement/usermanagement.component';
+import { ConfigurationComponent } from './components/configuration/configuration.component';
+import { FirmwareupdateComponent } from './components/firmwareupdate/firmwareupdate.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ConfigurationComponent } from './component/configuration/component/conf
     ControlComponent,
     ProvisionComponent,
     UsermanagementComponent,
-    ConfigurationComponent
+    ConfigurationComponent,
+    FirmwareupdateComponent
   ],
   imports: [
     SharedModule,

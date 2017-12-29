@@ -4,8 +4,8 @@ import { CustomValidators } from 'ng2-validation';
 import { ModelFactory, Model } from 'ngx-model';
 import { Observable } from 'rxjs/Observable';
 import { Errors } from '../../../shared/models/error.model';
-import { AuthenticationService } from '../../service/authentication.service';
-import { IUser } from '../../../layout/model/user.model';
+import { IUser } from '../../../layout/models/user/user.model';
+import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -25,7 +25,6 @@ errors = <Errors> {
   emailError: '',
   passwordError: ''
 };
-
 constructor(private authService: AuthenticationService,
   public fb: FormBuilder,
   public modelFactory: ModelFactory<Errors>) {
@@ -46,7 +45,7 @@ constructor(private authService: AuthenticationService,
   }
 
   login() {
-    const user: IUser = { username: 'test', password: 'test', role: 'Admin' };
+    const user: IUser = { username: this.emailFormControl.value, password: this.passwordFormControl.value, role: 'Admin' };
     this.authService.login(user);
   }
 

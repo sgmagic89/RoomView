@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
         <img src="/assets/logo.png" width="160" height="40" alt="">
       </a>
@@ -9,29 +9,29 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul #mainMenuItems class="navbar-nav mr-auto">
         <li class="nav-item active" (click)="clickedLink($event)">
-          <a class="nav-link fa fa-tachometer"  [routerLink]="['/dashboard','control']">
+          <a class="nav-link fa fa-tachometer"  [routerLink]="['/portal','control']">
           </a>
-          <a class="nav-link" [routerLink]="['/dashboard','control']">Control</a>
+          <a class="nav-link" [routerLink]="['/portal','control']">Control</a>
         </li>
         <li class="nav-item" (click)="clickedLink($event)">
-            <a class="nav-link fa fa-podcast" [routerLink]="['/dashboard','provision']">
+            <a class="nav-link fa fa-podcast" [routerLink]="['/portal','provision']">
             </a>
-          <a class="nav-link"  [routerLink]="['/dashboard','provision']">Provision</a>
+          <a class="nav-link"  [routerLink]="['/portal','provision']">Provision</a>
         </li>
         <li class="nav-item" (click)="clickedLink($event)">
-            <a class="nav-link fa fa-users"  [routerLink]="['/dashboard','users']">
+            <a class="nav-link fa fa-users"  [routerLink]="['/portal','usermanager']">
               </a>
-            <a class="nav-link" [routerLink]="['/dashboard','users']">Users</a>
+            <a class="nav-link" [routerLink]="['/portal','usermanager']">Users</a>
         </li>
         <li class="nav-item" (click)="clickedLink($event)">
-            <a class="nav-link fa fa-microchip" [routerLink]="['/dashboard','firmware']">
+            <a class="nav-link fa fa-microchip" [routerLink]="['/portal','firmwareupdate']">
               </a>
-            <a class="nav-link" [routerLink]="['/dashboard','firmware']">Firmware</a>
+            <a class="nav-link" [routerLink]="['/portal','firmwareupdate']">Firmware</a>
         </li>
         <li class="nav-item" (click)="clickedLink($event)">
-            <a class="nav-link fa fa-cog" [routerLink]="['/dashboard','configuration']">
+            <a class="nav-link fa fa-cog" [routerLink]="['/portal','configuration']">
               </a>
-            <a class="nav-link" [routerLink]="['/dashboard','configuration']">Configuration</a>
+            <a class="nav-link" [routerLink]="['/portal','configuration']">Configuration</a>
         </li>
       </ul>
       
