@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand navbar-left" href="#">
         <img src="/assets/logo.png" width="160" height="40" alt="">
       </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,35 +7,35 @@
     </button>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul #mainMenuItems class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link fa fa-tachometer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/portal','control']">
+      <ul #mainMenuItems class="navbar-nav navbar-center navbarSupportedContent">
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/portal','control']">
+          <a class="nav-link fa fa-tachometer">
           </a>
-          <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/portal','control']">Control</a>
+          <a class="nav-link">Control</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link fa fa-podcast"  routerLinkActive="active" [routerLink]="['/portal','provision']">
+        <li class="nav-item" routerLinkActive="active" [routerLink]="['/portal','provision']">
+            <a class="nav-link fa fa-podcast" >
             </a>
-          <a class="nav-link"  routerLinkActive="active" [routerLink]="['/portal','provision']">Provision</a>
+          <a class="nav-link">Provision</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link fa fa-users" routerLinkActive="active" [routerLink]="['/portal','usermanager']">
+        <li class="nav-item" routerLinkActive="active" [routerLink]="['/portal','usermanager']">
+            <a class="nav-link fa fa-users">
               </a>
-            <a class="nav-link" routerLinkActive="active" [routerLink]="['/portal','usermanager']">Users</a>
+            <a class="nav-link">Users</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link fa fa-microchip" routerLinkActive="active" [routerLink]="['/portal','firmwareupdate']">
+        <li class="nav-item" routerLinkActive="active" [routerLink]="['/portal','firmwareupdate']">
+            <a class="nav-link fa fa-microchip">
               </a>
-            <a class="nav-link" routerLinkActive="active" [routerLink]="['/portal','firmwareupdate']">Firmware</a>
+            <a class="nav-link">Firmware</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link fa fa-cog" routerLinkActive="active" [routerLink]="['/portal','configuration']">
+        <li class="nav-item" routerLinkActive="active" [routerLink]="['/portal','configuration']">
+            <a class="nav-link fa fa-cog">
               </a>
-            <a class="nav-link" [routerLink]="['/portal','configuration']">Configuration</a>
+            <a class="nav-link">Configuration</a>
         </li>
       </ul>
       
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav navbar-right ml-auto user">
         <li class="nav-item dropdown dropdown-pull-right">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa fa-user" aria-hidden="true"></i>
@@ -44,7 +44,7 @@
             <a class="dropdown-item" href="#">Profile</a>
             <div class="dropdown-divider"></div>
 
-            <a class="dropdown-item" [routerLink]="['/login']">
+            <a class="dropdown-item" [routerLink]="['/signin']">
                 <i class="fa fa-sign-out" aria-hidden="true"></i>
                 Signout</a>
           </div>
