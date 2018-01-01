@@ -12,8 +12,8 @@ import { AuthenticationService } from '../../services/authentication.service';
   styleUrls: ['./forgotpassword.component.scss']
 })
 export class ForgotPasswordComponent implements OnInit {
-  private form: FormGroup;
-  private emailFormControl: AbstractControl;
+  public form: FormGroup;
+  public emailFormControl: AbstractControl;
 
   public errorsmodel: Model<Errors>;
   errors$: Observable<Errors>;
@@ -30,5 +30,11 @@ export class ForgotPasswordComponent implements OnInit {
     });
    this.emailFormControl = this.form.controls['email'];
   }
+
+  forgotPassword() {
+    
+  }
+
+
 
 }

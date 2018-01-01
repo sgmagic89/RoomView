@@ -14,9 +14,9 @@ import { AuthenticationService } from '../../services/authentication.service';
 })
 export class LoginComponent implements OnInit {
 
-private form: FormGroup;
-private emailFormControl: AbstractControl;
-private passwordFormControl: AbstractControl;
+public form: FormGroup;
+public emailFormControl: AbstractControl;
+public passwordFormControl: AbstractControl;
 
 // Create a error observable to communicate with our validation directive
 public errorsmodel: Model<Errors>;
