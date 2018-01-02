@@ -10,31 +10,44 @@
           Network Configuration
         </div>
         <div class="form">
-          <form [formGroup]="form" (ngSubmit)="saveConfiguration()">
-            <div class="formField">
-              <label class="formLabel" for="networkName">Network Name:</label>
+          <form [formGroup]="formNetwork" (ngSubmit)="saveNetworkConfiguration()">
+            <div class="formFields">
+              <label class="formLabel" for="networkName">Network Name</label>
               <input id="networkName" type="text" class="form-control" placeholder="Name" [formControl]="networkNameFormControl"
-                [appFieldValidator]="networkNameFormControl" [errorsModel]="errorsmodel" />
-              <span  class="formError" *ngIf="networkNameFormControl.touched && networkNameFormControl.errors">{{errors.networkName}}</span>
+                [appFieldValidator]="networkNameFormControl" [errorsModel]="errorsmodel" />  
             </div>
+            <span  class="formError" *ngIf="networkNameFormControl.touched && networkNameFormControl.errors">{{errors.networkName}}</span>
+           
             
-
-            <input id="threadMasterKey" type="text" class="form-control" placeholder="Thread Master Key" [formControl]="threadMasterKeyFormControl"
+            <div class="formFields">
+              <label class="formLabel" for="threadMasterKey">Thread Master Key</label>
+              <input id="threadMasterKey" type="text" class="form-control" placeholder="Master Key" [formControl]="threadMasterKeyFormControl"
               [appFieldValidator]="threadMasterKeyFormControl" [errorsModel]="errorsmodel" />
+            </div>
             <span class="formError" *ngIf="threadMasterKeyFormControl.touched && threadMasterKeyFormControl.errors">{{errors.masterKeyError}}</span>
 
-            <input id="threadChannel" type="text" class="form-control" placeholder="Thread Channel" [formControl]="threadChannelFormControl"
+            <div class="formFields">
+              <label class="formLabel" for="threadChannel">Thread Channel</label>
+              <input id="threadChannel" type="text" class="form-control" placeholder="Channel" [formControl]="threadChannelFormControl"
               [appFieldValidator]="threadChannelFormControl" [errorsModel]="errorsmodel" />
+            </div>
             <span class="formError" *ngIf="threadChannelFormControl.touched && threadChannelFormControl.errors">{{errors.channelError}}</span>
 
-            <input id="threadPanId" type="text" class="form-control" placeholder="Thread Panid" [formControl]="threadPanIdFormControl"
+            <div class="formFields">
+              <label class="formLabel" for="threadPanId">Thread Panid</label>
+              <input id="threadPanId" type="text" class="form-control" placeholder="Panid" [formControl]="threadPanIdFormControl"
               [appFieldValidator]="threadPanIdFormControl" [errorsModel]="errorsmodel" />
+            </div>
             <span class="formError" *ngIf="threadPanIdFormControl.touched && threadPanIdFormControl.errors">{{errors.panIdError}}</span>
 
-            <input id="threadExtendedPanId" type="text" class="form-control" placeholder="Thread Extended Panid" [formControl]="threadPanIdFormControl"
-              [appFieldValidator]="threadPanIdFormControl" [errorsModel]="errorsmodel" />
+            <div class="formFields">
+              <label class="formLabel" for="threadExtendedPanId">Thread Extended Panid</label>
+              <input id="threadExtendedPanId" type="text" class="form-control" placeholder="Extended Panid" [formControl]="threadPanIdFormControl"
+              [appFieldValidator]="threadExtendedPanIdFormControl" [errorsModel]="errorsmodel" />
+            </div>
             <span class="formError" *ngIf="threadPanIdFormControl.touched && threadPanIdFormControl.errors">{{errors.extendedPanIdError}}</span>
             <div class="actionBtnGroup">
+              <span class="spacer" fxFlex></span>
               <button type="submit" class="btn btn-primary" [disabled]="canSubmit()">Submit</button>
               <button class="btn btn-secondary" (click)="resetForm()" >Reset</button>
             </div>
@@ -43,6 +56,80 @@
         </div>
       </div>
     </div>
-    <div class="seperator">
+
+    <div class="seperator"></div>
+
+    <div class="smtpConfig">
+      <div class="form-container">
+        <div class="heading">
+          SMTP Configuration
+        </div>
+        <div class="form">
+          <form [formGroup]="formSmtpServer" (ngSubmit)="saveSmtpConfiguration()">
+            <div class="formFields">
+              <label class="formLabel" for="smtpServerAddress">SMTP Server Address</label>
+              <input id="smtpServerAddress" type="text" class="form-control" placeholder="Server Address" [formControl]="smtpServerAddressFormControl"
+                [appFieldValidator]="smtpServerAddressFormControl" [errorsModel]="errorsmodel" />  
+            </div>
+            <span  class="formError" *ngIf="smtpServerAddressFormControl.touched && smtpServerAddressFormControl.errors">{{errors.smtpServerAddress}}</span>
+           
+            
+            <div class="formFields">
+              <label class="formLabel" for="server">SMTP Username</label>
+              <input id="smtpServerUsername" type="text" class="form-control" placeholder="Username" [formControl]="smtpServerUsernameFormControl"
+              [appFieldValidator]="smtpServerUsernameFormControl" [errorsModel]="errorsmodel" />
+            </div>
+            <span class="formError" *ngIf="smtpServerUsernameFormControl.touched && smtpServerUsernameFormControl.errors">{{errors.smtpServerUsername}}</span>
+  
+            <div class="formFields">
+              <label class="formLabel" for="smtpServerPassword">SMTP Password</label>
+              <input id="smtpServerPassword" type="text" class="form-control" placeholder="Password" 
+              [formControl]="smtpServerPasswordFormControl"
+              [appFieldValidator]="smtpServerPasswordFormControl" [errorsModel]="errorsmodel" />
+            </div>
+            <span class="formError" *ngIf="smtpServerPasswordFormControl.touched && smtpServerPasswordFormControl.errors">{{errors.smtpServerPassword}}</span>
+  
+            <div class="formFields">
+              <label class="formLabel" for="smtpServerPort">SMTP Port</label>
+              <input id="smtpServerPort" type="text" class="form-control" placeholder="Port" [formControl]="smtpServerPortFormControl"
+              [appFieldValidator]="smtpServerPortFormControl" [errorsModel]="errorsmodel" />
+            </div>
+            <span class="formError" *ngIf="smtpServerPortFormControl.touched && smtpServerPortFormControl.errors">{{errors.smtpServerPortError}}</span>
+  
+           
+            <div class="actionBtnGroup" >
+              <button class="btn btn-secondary" (click)="resetForm()" >Reset</button>
+              <button type="submit" class="btn btn-primary" [disabled]="canSubmit()">Submit</button>
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="seperator"></div>
+
+    <div class="systemConfig">
+      <div class="form-container">
+        <div class="heading">
+          System Configuration
+        </div>
+        <div class="form">
+          <form [formGroup]="formSystemConfig" (ngSubmit)="saveSystemConfiguration()">
+              <div class="formFields">
+                  <label class="formLabel" for="systemTime">System Time</label>
+                  <input id="systemTime" type="text" class="form-control" placeholder="00:00:00" [formControl]="systemTimeFormControl"
+                    [appFieldValidator]="systemTimeFormControl" [errorsModel]="errorsmodel" />  
+                </div>
+                <span  class="formError" *ngIf="systemTimeFormControl.touched && systemTimeFormControl.errors">{{errors.systemTime}}</span>
+                <div class="actionBtnGroup" >
+                    <button class="btn btn-secondary" (click)="resetForm()" >Reset</button>
+                    <button type="submit" class="btn btn-primary" [disabled]="canSubmit()">Submit</button>
+                  </div>
+          </form>
+        </div>
+    </div>
+    
   </div>
+
 </div>

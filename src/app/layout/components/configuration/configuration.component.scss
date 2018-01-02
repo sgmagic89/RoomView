@@ -10,6 +10,7 @@
     background: white;
     width: 95%;
     height: 100%;
+    overflow:auto;
 }
 
 .header {
@@ -28,6 +29,7 @@
     width: 50%;
     flex-direction: column;
     padding: 1rem;
+    
 }
 
 .heading {
@@ -47,10 +49,10 @@
     flex-direction: row;
 }
 
-.formField {
-    flex-grow: 1;
+#systemTime {
+    max-width: 5.5rem;
 }
 
-.formLabel{
-    
+.spacer {
+    flex-grow: 1;
 }

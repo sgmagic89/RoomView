@@ -12,7 +12,14 @@ export class ConfigurationComponent implements OnInit {
   ngOnInit() {
   }
 
-  saveConfiguration() {
+  saveNetworkConfiguration() {
+  }
+
+  saveSmtpConfiguration() {
+  }
+
+  saveSystemConfiguration() {
+
   }
 
   canSubmit(): boolean {
