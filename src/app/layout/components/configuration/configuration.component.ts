@@ -13,11 +13,13 @@ export class ConfigurationComponent implements OnInit {
   }
 
   saveConfiguration() {
-    
   }
 
-  canSubmit():boolean {
+  canSubmit(): boolean {
     return false;
+  }
+
+  resetForm() {
   }
 
 }

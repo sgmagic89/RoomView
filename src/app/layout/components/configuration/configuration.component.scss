@@ -4,6 +4,7 @@
     justify-content: center;
     width: 100%;
     height: 85%;
+    margin-top: 2rem;
 }
 .maincontainer {
     background: white;
@@ -12,7 +13,7 @@
 }
 
 .header {
-    height: 10%;
+    height: 3rem;
     background: #e1e1e1;
     // padding: 2rem;
     font-weight: bold;
@@ -39,4 +40,17 @@
     border-top: 1px solid #8c8b8b;
     width:100%;
     margin-bottom: 1rem;
+}
+
+.actionBtnGroup {
+    display: flex;
+    flex-direction: row;
+}
+
+.formField {
+    flex-grow: 1;
+}
+
+.formLabel{
+    
 }

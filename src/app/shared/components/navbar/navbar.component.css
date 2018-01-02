@@ -15,7 +15,7 @@
 
 .navbar-nav {
   flex-direction: row;
-  margin-left: 20rem;
+  /* margin-left: 20rem; */
 }
 
 /* .navbar-nav.mr-auto {
@@ -71,5 +71,5 @@
 }
 
 .user {
-  margin-top: 1rem;
+  
 }

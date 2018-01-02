@@ -15,6 +15,30 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+.btn-secondary {
+    margin-top: 40px;
+    background: #2D2D2D;
+    color: rgb(255, 242, 0);
+    border-color: #2D2D2D;
+    width: 100%;
+}
+
+.btn-primary {
+    margin-top: 40px;
+    background: rgb(255, 242, 0);
+    color: #2D2D2D;
+    border-color: rgb(255, 242, 0);
+    width: 100%;
+}
+
+.btn:hover{
+    margin-top: 40px;
+    background: #2D2D2D;
+    color: rgb(255, 255, 255);
+    border-color: #2D2D2D;
+    width: 100%;
+}
+
 .content {
     color: white;
     display: flex;
@@ -25,9 +49,17 @@ body {
 
 .form-control {
     margin-top: 1rem;
+    flex-grow: 1;
+    flex-basis: 0;
 }
 
 .formError {
     color: red;
     margin-bottom: 1rem;
+}
+
+.formField {
+    display: flex;
+    flex-direction: row;
+    margin-left:  1 rem;
 }
