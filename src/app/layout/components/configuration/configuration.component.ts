@@ -12,4 +12,12 @@ export class ConfigurationComponent implements OnInit {
   ngOnInit() {
   }
 
+  saveConfiguration() {
+    
+  }
+
+  canSubmit():boolean {
+    return false;
+  }
+
 }

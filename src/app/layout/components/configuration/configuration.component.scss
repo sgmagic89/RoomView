@@ -14,10 +14,29 @@
 .header {
     height: 10%;
     background: #e1e1e1;
-    padding: 2rem;
+    // padding: 2rem;
     font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 1rem;
+}
+
+.form-container {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    padding: 1rem;
 }
 
 .heading {
     font-weight: bold;
+}
+
+
+
+.seperator {
+    border-top: 1px solid #8c8b8b;
+    width:100%;
+    margin-bottom: 1rem;
 }

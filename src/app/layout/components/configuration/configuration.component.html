@@ -4,8 +4,28 @@
       Configuration
     </div>
     <div class="networkConfig">
-      <div class="heading">
-        Network Configuration
+      <div class="form-container">
+        <div class="heading">
+          Network Configuration
+        </div>
+        <div class="seperator"></div>
+        <div class="form">
+          <form [formGroup]="form" (ngSubmit)="saveConfiguration()">
+  <input id="networkName" type="text" class="form-control" placeholder="Network Name" 
+  [formControl]="networkNameFormControl" 
+  [appFieldValidator]="networkNameFormControl"
+  [errorsModel] = "errorsmodel" />
+  <span class="formError" *ngIf="networkNameFormControl.touched && networkNameFormControl.errors">{{errors.emailError}}</span>
+
+  <input id="threadMasterKey" type="text" class="form-control" placeholder="Thread Master Key" 
+  [formControl]="threadMasterKeyFormControl" 
+  [appFieldValidator]="threadMasterKeyFormControl"
+  [errorsModel] = "errorsmodel" />
+  <span class="formError" *ngIf="threadMasterKeyFormControl.touched && threadMasterKeyFormControl.errors">{{errors.passwordError}}</span>
+  
+  <button type="submit" class="btn btn-primary" [disabled]="canSubmit()">Submit</button>
+</form>
+        </div>
       </div>
     </div>
   </div>
