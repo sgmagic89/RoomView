@@ -1,4 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
+import { ConfigurationService } from '../../services/configuration/configuration.service';
 
 @Component({
   selector: 'app-configuration',
@@ -7,26 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfigurationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private configService: ConfigurationService) { }
 
   ngOnInit() {
-  }
-
-  saveNetworkConfiguration() {
-  }
-
-  saveSmtpConfiguration() {
-  }
-
-  saveSystemConfiguration() {
-
-  }
-
-  canSubmit(): boolean {
-    return false;
-  }
-
-  resetForm() {
+    this.configService.getNetworkSettings();
+    this.configService.getSmtpSettings();
+    this.configService.getNetworkSettings();
   }
 
 }

@@ -1,0 +1,47 @@
+<div class="smtpConfig">
+  <div class="form-container">
+    <div class="heading">
+      SMTP Configuration
+    </div>
+    <div class="form">
+      <form [formGroup]="formSmtpServer" (ngSubmit)="saveSmtpConfiguration()">
+        <div class="formFields">
+          <label class="formLabel" for="smtpServerAddress">SMTP Server Address</label>
+          <input id="smtpServerAddress" type="text" class="form-control" placeholder="Server Address" [formControl]="smtpServerAddressFormControl"
+            [appFieldValidator]="smtpServerAddressFormControl" [errorsModel]="errorsmodel" />  
+        </div>
+        <span  class="formError" *ngIf="smtpServerAddressFormControl.touched && smtpServerAddressFormControl.errors">{{errors.smtpServerAddress}}</span>
+       
+        
+        <div class="formFields">
+          <label class="formLabel" for="server">SMTP Username</label>
+          <input id="smtpServerUsername" type="text" class="form-control" placeholder="Username" [formControl]="smtpServerUsernameFormControl"
+          [appFieldValidator]="smtpServerUsernameFormControl" [errorsModel]="errorsmodel" />
+        </div>
+        <span class="formError" *ngIf="smtpServerUsernameFormControl.touched && smtpServerUsernameFormControl.errors">{{errors.smtpServerUsername}}</span>
+
+        <div class="formFields">
+          <label class="formLabel" for="smtpServerPassword">SMTP Password</label>
+          <input id="smtpServerPassword" type="text" class="form-control" placeholder="Password" 
+          [formControl]="smtpServerPasswordFormControl"
+          [appFieldValidator]="smtpServerPasswordFormControl" [errorsModel]="errorsmodel" />
+        </div>
+        <span class="formError" *ngIf="smtpServerPasswordFormControl.touched && smtpServerPasswordFormControl.errors">{{errors.smtpServerPassword}}</span>
+
+        <div class="formFields">
+          <label class="formLabel" for="smtpServerPort">SMTP Port</label>
+          <input id="smtpServerPort" type="text" class="form-control" placeholder="Port" [formControl]="smtpServerPortFormControl"
+          [appFieldValidator]="smtpServerPortFormControl" [errorsModel]="errorsmodel" />
+        </div>
+        <span class="formError" *ngIf="smtpServerPortFormControl.touched && smtpServerPortFormControl.errors">{{errors.smtpServerPortError}}</span>
+
+       
+        <div class="actionBtnGroup" >
+          <button class="btn btn-secondary" (click)="resetForm()" >Reset</button>
+          <button type="submit" class="btn btn-primary" [disabled]="canSubmit()">Submit</button>
+        </div>
+        
+      </form>
+    </div>
+  </div>
+</div>

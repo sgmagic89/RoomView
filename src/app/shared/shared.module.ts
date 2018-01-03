@@ -17,6 +17,7 @@ import { ApiService } from './services/api/api.service';
 import { LocalStorageService } from './services/localstorage/localstorage.service';
 import { AlertService } from './services/alert/alert.service';
 import { AuthGuard } from '../authentication/services/authguard.service';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AuthGuard } from '../authentication/services/authguard.service';
     FlexLayoutModule,
     AngularFontAwesomeModule,
     TreeModule,
-    NgxModelModule
+    NgxModelModule,
+    NgxDatatableModule
   ],
   exports: [
     CommonModule,

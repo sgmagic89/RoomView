@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./usermanagement.component.scss']
 })
 export class UsermanagementComponent implements OnInit {
-
+  rows = [];
+  columns = [];
   constructor() { }
 
   ngOnInit() {

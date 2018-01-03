@@ -1,0 +1,22 @@
+<div class="systemConfig">
+  <div class="form-container">
+    <div class="heading">
+      System Configuration
+    </div>
+    <div class="form">
+      <form [formGroup]="formSystemConfig" (ngSubmit)="saveSystemConfiguration()">
+          <div class="formFields">
+              <label class="formLabel" for="systemTime">System Time</label>
+              <input id="systemTime" type="text" class="form-control" placeholder="00:00:00" [formControl]="systemTimeFormControl"
+                [appFieldValidator]="systemTimeFormControl" [errorsModel]="errorsmodel" />  
+            </div>
+            <span  class="formError" *ngIf="systemTimeFormControl.touched && systemTimeFormControl.errors">{{errors.systemTime}}</span>
+            <div class="actionBtnGroup" >
+                <button class="btn btn-secondary" (click)="resetForm()" >Reset</button>
+                <button type="submit" class="btn btn-primary" [disabled]="canSubmit()">Submit</button>
+              </div>
+      </form>
+    </div>
+</div>
+
+</div>

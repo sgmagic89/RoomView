@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~angular-tree-component/dist/angular-tree-component.css';
+@import '~@swimlane/ngx-datatable/release/index.css';
+@import '~@swimlane/ngx-datatable/release/themes/material.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css';
+
 html,
 body {
     width: 100%;
@@ -74,3 +78,46 @@ body {
 }
 
 
+.header {
+    height: 3rem;
+    background: #e1e1e1;
+    // padding: 2rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 1rem;
+}
+
+.form-container {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    padding: 1rem;
+    
+}
+
+.heading {
+    font-weight: bold;
+}
+
+
+// config component settings
+.seperator {
+    border-top: 1px solid #8c8b8b;
+    width:100%;
+    margin-bottom: 1rem;
+}
+
+.actionBtnGroup {
+    display: flex;
+    flex-direction: row;
+}
+
+#systemTime {
+    max-width: 5.5rem;
+}
+
+.spacer {
+    flex-grow: 1;
+}
