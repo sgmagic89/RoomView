@@ -1,12 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand navbar-left" href="#">
-        <img src="/assets/logo.png" width="160" height="40" alt="">
-      </a>
+ 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <a class="navbar-brand navbar-left" href="#">
+          <img src="/assets/logo.png" width="160" height="40" alt="">
+      </a>
       <ul #mainMenuItems class="navbar-nav navbar-center navbarSupportedContent">
         <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/portal','control']">
           <a class="nav-link fa fa-tachometer">
@@ -35,7 +36,7 @@
         </li>
       </ul>
       
-      <ul class="navbar-nav navbar-right ml-auto user">
+      <ul class="navbar-nav nav-right">
         <li class="nav-item dropdown dropdown-pull-right">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa fa-user" aria-hidden="true"></i>

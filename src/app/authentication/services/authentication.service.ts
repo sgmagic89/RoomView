@@ -49,7 +49,7 @@ public login(user: IUser): Observable<AuthState> {
             authState.user.password = null;
             authState.token = null;
             // authState.user.role = error.messages.toString();
-            authState.user.role = 'Admin';
+            authState.user.role = null;
             this.model.set(authState);
             this.router.navigate(['/portal']);
             this.alertService.success('logged in successfully!!');

@@ -12,9 +12,9 @@ export class ConfigurationComponent implements OnInit {
   constructor(private configService: ConfigurationService) { }
 
   ngOnInit() {
-    this.configService.getNetworkSettings();
-    this.configService.getSmtpSettings();
-    this.configService.getNetworkSettings();
+    // this.configService.getNetworkSettings();
+    // this.configService.getSmtpSettings();
+    // this.configService.getNetworkSettings();
   }
 
 }

@@ -45,7 +45,7 @@ constructor(private authService: AuthenticationService,
   }
 
   login() {
-    const user: IUser = { username: this.emailFormControl.value, password: this.passwordFormControl.value, role: 'Admin' };
+    const user: IUser = { username: this.emailFormControl.value, password: this.passwordFormControl.value };
     this.authService.login(user);
   }
 

@@ -52,6 +52,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     RightnavbarComponent,
     RouterModule,
     NgxModelModule,
+    NgxDatatableModule,
     AppValidateDirective,
     AlertComponent
   ]

@@ -21,15 +21,15 @@ export class NetworkconfigurationComponent implements OnInit {
   constructor(private configApi: ConfigurationService) { }
 
   ngOnInit() {
-    this.configApi.netwrokSettings$.subscribe(
-      data => {
-        this.networkNameFormControl.value.set(data.networkName);
-        this.threadChannelFormControl.value.set(data.threadChannel);
-        this.threadMasterKeyFormControl.value.set(data.threadMasterKey);
-        this.threadPanIdFormControl.value.set(data.threadPanId);
-        this.threadExtendedPanIdFormControl.value.set(data.threadExtendedPanId);
-      }
-    );
+    // this.configApi.netwrokSettings$.subscribe(
+    //   data => {
+    //     this.networkNameFormControl.value.set(data.networkName);
+    //     this.threadChannelFormControl.value.set(data.threadChannel);
+    //     this.threadMasterKeyFormControl.value.set(data.threadMasterKey);
+    //     this.threadPanIdFormControl.value.set(data.threadPanId);
+    //     this.threadExtendedPanIdFormControl.value.set(data.threadExtendedPanId);
+    //   }
+    // );
   }
 
   saveNetworkConfiguration() {
