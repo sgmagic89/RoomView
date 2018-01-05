@@ -10,13 +10,33 @@ export class UserService {
     private usersModel: Model<IUser[]>;
     public users$: Observable<IUser[]>;
 
-    private userFormData: Model<IUser>;
-    
+    public userFormDataModel: Model<IUser>;
+    public userFormData$: Observable<IUser>;
 
-constructor(private api: ApiService, private userModelFactory: ModelFactory<IUser[]>) {
+    public userFormValidityModel: Model<boolean>;
+    public userFormValidity$: Observable<boolean>;
+
+constructor(private api: ApiService,
+    private userModelFactory: ModelFactory<IUser[]>,
+    private userFormDataModelFactory: ModelFactory<IUser>,
+    private userFormValidityModelFactory: ModelFactory<boolean>) {
     this.usersModel = userModelFactory.create(Array.of(initUser));
     this.users$ = this.usersModel.data$;
+
+    this.userFormDataModel =  userFormDataModelFactory.create(initUser);
+    this.userFormData$ = this.userFormDataModel.data$;
+
+    this.userFormValidityModel = this.userFormValidityModelFactory.create(false);
+    this.userFormValidity$ = this.userFormValidityModel.data$;
 }
+
+ public setUserFormData(user: IUser) {
+     this.userFormDataModel.set(user);
+ }
+
+ public setFormValidity(validity: boolean) {
+    this.userFormValidityModel.set(validity);
+ }
 
  public getAllUsers(): Observable<IUser[]> {
      const apiSubscription: Subscription = this.api.usermanagement_get_all_users()

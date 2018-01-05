@@ -1,12 +1,14 @@
 <div class="addUser">
-  <div class="maincontainer">
+  <div class="popupcontainer">
     <div class="header">
+        <div class="headertext">
       Add User
+        </div>
     </div>
 
     <div class="form">
           <app-userdetails></app-userdetails>
-          <button type="submit" class="btn btn-secondary" [disabled]="!form.valid">Submit</button>
+          <button type="button" (click)="addThisUser()" class="btn btn-secondary" [disabled]="!formValid">Submit</button>
     </div>
   </div>
 </div>

@@ -52,6 +52,10 @@ body {
     background: rgb(0, 0, 0);
 }
 
+.form {
+    margin: 1rem;
+}
+
 .formError {
     color: red;
     margin-bottom: 1rem;
@@ -81,13 +85,41 @@ body {
 .header {
     height: 3rem;
     background: #e1e1e1;
-    // padding: 2rem;
     font-weight: bold;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     padding-left: 1rem;
+    padding-right: 1rem;
+    justify-content: space-between;
 }
+
+.headertext {
+    align-self: center;
+}
+
+.headeraction {
+    align-self: center;
+}
+
+.headeraction .fa {
+    background: rgb(182, 181, 181);
+    padding: 0.5em;
+    text-align: center;
+    display: inline;
+    border-radius: 50%;
+    line-height: 50px;  /** for vertical center - if needed **/
+    cursor: pointer;
+}
+
+.headeraction .fa:hover {
+    background: rgb(255, 255, 255);
+    padding: 0.5em;
+    text-align: center;
+    display: inline;
+    border-radius: 50%;
+    line-height: 50px;  /** for vertical center - if needed **/
+}
+
+
 
 .form-container {
     display: flex;
@@ -124,4 +156,18 @@ body {
 
 .dataTableContainer {
     margin: 2rem;
+}
+
+.maincontainer {
+    background: white;
+    width: 95%;
+    height: 100%;
+    overflow:auto;
+}
+
+.popupcontainer {
+    background: white;
+    width: 100%;
+    height: 100%;
+    overflow:auto;
 }

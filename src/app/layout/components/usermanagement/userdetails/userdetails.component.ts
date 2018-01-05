@@ -4,6 +4,9 @@ import { Observable } from 'rxjs/Observable';
 import { Model,ModelFactory } from 'ngx-model';
 import { Errors } from '../../../../shared/models/error.model';
 import { CustomValidators } from 'ng2-validation';
+import { UserService } from '../../../services/user/user.service';
+import { Subscription } from 'rxjs/Subscription';
+import { IUser } from '../../../models/user/user.model';
 @Component({
   selector: 'app-userdetails',
   templateUrl: './userdetails.component.html',
@@ -27,8 +30,11 @@ public form: FormGroup;
     contactError: '',
     addressError: ''
   };
+
+  roles = ['ADMIN', 'USER'];
   constructor(public fb: FormBuilder,
-    public modelFactory: ModelFactory<Errors>) {
+    public modelFactory: ModelFactory<Errors>,
+    public userService: UserService) {
       this.errorsmodel = modelFactory.create(this.errors);
       this.errors$ = this.errorsmodel.data$;
       this.errors$.subscribe(error => {
@@ -53,14 +59,42 @@ public form: FormGroup;
    this.nameFormControl = this.form.controls['name'];
    this.addressFormControl = this.form.controls['address'];
    this.contactFormControl = this.form.controls['contact'];
-
+   this.getFormData();
    this.syncFormData();
   }
 
-  syncFormData(){
+  getFormData() {
+    const subscription: Subscription = this.userService.userFormData$.subscribe(
+      data => {
+        if (data.username !== null) {
+        this.usernameFormControl.setValue(data.username);
+        this.passwordFormControl.setValue('samplepassword');
+        this.nameFormControl.setValue(data.name);
+        this.addressFormControl.setValue(data.address);
+        this.contactFormControl.setValue(data.contactNumber);
+        subscription.unsubscribe();
+        }
+      }
+    );
+  }
+
+  syncFormData() {
+    let newUserData: IUser;
     this.form.valueChanges.subscribe(
       data => {
-        
+          newUserData = {
+          username: this.usernameFormControl.value,
+          password: this.passwordFormControl.value,
+          name: this.nameFormControl.value,
+          address: this.addressFormControl.value,
+          contactNumber: this.contactFormControl.value
+          };
+          this.userService.setUserFormData(newUserData);
+          if (this.form.valid) {
+            this.userService.setFormValidity(true);
+          } else {
+            this.userService.setFormValidity(false);
+          }
       }
     );
   }

@@ -12,4 +12,7 @@ export class EdituserComponent implements OnInit {
   ngOnInit() {
   }
 
+  saveChanges() {
+  }
+
 }

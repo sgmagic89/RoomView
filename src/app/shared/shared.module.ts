@@ -37,7 +37,8 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     AngularFontAwesomeModule,
     TreeModule,
     NgxModelModule,
-    NgxDatatableModule
+    NgxDatatableModule,
+    NgbModule.forRoot()
   ],
   exports: [
     CommonModule,
@@ -53,6 +54,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     RouterModule,
     NgxModelModule,
     NgxDatatableModule,
+    NgbModule,
     AppValidateDirective,
     AlertComponent
   ]

@@ -15,6 +15,7 @@ import { UserdetailsComponent } from './components/usermanagement/userdetails/us
 import { AdduserComponent } from './components/usermanagement/adduser/adduser.component';
 import { EdituserComponent } from './components/usermanagement/edituser/edituser.component';
 import { ProfileComponent } from './components/usermanagement/profile/profile.component';
+import { UserService } from './services/user/user.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ProfileComponent } from './components/usermanagement/profile/profile.co
     SharedModule,
     LayoutRoutingModule
   ],
-  providers: [ConfigurationService]
+  providers: [ConfigurationService, UserService],
+  entryComponents: [AdduserComponent, EdituserComponent]
 
 })
 export class LayoutModule { }

@@ -11,12 +11,16 @@
     [errorsModel] = "errorsmodel" />
     <span class="formError" *ngIf="passwordFormControl.touched && passwordFormControl.errors">{{errors.passwordError}}</span>
 
-    <input id="name" type="te</form>xt" class="form-control" placeholder="Name" 
+    <input id="name" type="text" class="form-control" placeholder="Name" 
     [formControl]="nameFormControl" 
     [appFieldValidator]="nameFormControl"
     [errorsModel] = "errorsmodel" />
     <span class="formError" *ngIf="nameFormControl.touched && nameFormControl.errors">{{errors.nameError}}</span>
 
+    <select class="form-control" [formControl]="roleFormControl">
+          <option *ngFor="let role of roles" [ngValue]="role">{{role}}</option>
+    </select>
+    
     <input id="address" type="text" class="form-control" placeholder="Address" 
     [formControl]="addressFormControl" 
     [appFieldValidator]="addressFormControl"
