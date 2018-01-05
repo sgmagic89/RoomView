@@ -4,27 +4,9 @@
       Add User
     </div>
 
-  <div class="form">
-    <form [formGroup]="form" (ngSubmit)="addUser()">
-        <input id="username" type="text" class="form-control" placeholder="Email" 
-        [formControl]="emailFormControl" 
-        [appFieldValidator]="emailFormControl"
-        [errorsModel] = "errorsmodel" />
-        <span class="formError" *ngIf="emailFormControl.touched && emailFormControl.errors">{{errors.emailError}}</span>
-      
-        <input id="pass" type="password" class="form-control" placeholder="Password" 
-        [formControl]="passwordFormControl" 
-        [appFieldValidator]="passwordFormControl"
-        [errorsModel] = "errorsmodel" />
-        <span class="formError" *ngIf="passwordFormControl.touched && passwordFormControl.errors">{{errors.passwordError}}</span>
-        
-        <div class="forgotpassword">
-          <a [routerLink]="['/forgotpassword']">Forgot Password?</a>
-        </div>
-        
-        
-        <button type="submit" class="btn btn-secondary" [disabled]="!form.valid">Login</button>
-      </form>
-  </div>
+    <div class="form">
+          <app-userdetails></app-userdetails>
+          <button type="submit" class="btn btn-secondary" [disabled]="!form.valid">Submit</button>
+    </div>
   </div>
 </div>

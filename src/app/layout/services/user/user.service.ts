@@ -8,13 +8,15 @@ import { Subscription } from 'rxjs/Subscription';
 export class UserService {
 
     private usersModel: Model<IUser[]>;
-
     public users$: Observable<IUser[]>;
+
+    private userFormData: Model<IUser>;
+    
 
 constructor(private api: ApiService, private userModelFactory: ModelFactory<IUser[]>) {
     this.usersModel = userModelFactory.create(Array.of(initUser));
     this.users$ = this.usersModel.data$;
- }
+}
 
  public getAllUsers(): Observable<IUser[]> {
      const apiSubscription: Subscription = this.api.usermanagement_get_all_users()
