@@ -32,6 +32,10 @@ export class UsermanagementComponent implements OnInit {
     const modalRef = this.modalService.open(EdituserComponent);
   }
 
+  startDelete(rowIndex: number) {
+    
+  }
+
   addNewUser() {
     this.userService.setUserFormData(initUser);
     const modalRef = this.modalService.open(AdduserComponent);

@@ -12,12 +12,11 @@
     </div>
     <div class="dataTableContainer">
             <ngx-datatable #tblStudents 
-            class='material expandable' 
+            class='material' 
             [columnMode]="'force'" 
             [headerHeight]="50" 
             [footerHeight]="50" 
             [rows]='rows'
-            (page)="onPage($event)"
             [limit]="10"
             [rowHeight]="'auto'">
         
@@ -51,7 +50,7 @@
                         </ng-template>
                 </ngx-datatable-column>
         
-                <ngx-datatable-column name="Actions" prop="studentType.name" [maxWidth]="150" [sortable]="false">
+                <ngx-datatable-column name="Actions" prop="name" [maxWidth]="150" [sortable]="false">
                         <ng-template let-row="row" let-rowIndex="rowIndex" ngx-datatable-cell-template>
                           <a class="fa fa-pencil-square-o" (click)="startEdit(rowIndex)" aria-hidden="true"></a>
                           <span class="space"> </span>

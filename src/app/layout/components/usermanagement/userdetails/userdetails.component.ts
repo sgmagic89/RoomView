@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { Model,ModelFactory } from 'ngx-model';
@@ -12,7 +12,7 @@ import { IUser } from '../../../models/user/user.model';
   templateUrl: './userdetails.component.html',
   styleUrls: ['./userdetails.component.scss']
 })
-export class UserdetailsComponent implements OnInit {
+export class UserdetailsComponent implements OnInit, OnDestroy {
 public form: FormGroup;
   public nameFormControl: AbstractControl;
   public usernameFormControl: AbstractControl;
@@ -32,6 +32,10 @@ public form: FormGroup;
   };
 
   roles = ['ADMIN', 'USER'];
+
+  formDataSubscription: Subscription;
+  syncDataSubscription: Subscription;
+
   constructor(public fb: FormBuilder,
     public modelFactory: ModelFactory<Errors>,
     public userService: UserService) {
@@ -52,35 +56,33 @@ public form: FormGroup;
       password: new FormControl(null, Validators.compose([Validators.required])),
       name: new FormControl(null, Validators.compose([Validators.required])),
       address: new FormControl(null, Validators.compose([Validators.required])),
-      contact: new FormControl(null, Validators.compose([CustomValidators.number]))
+      contact: new FormControl(null, Validators.compose([CustomValidators.number])),
+      role: new FormControl(null, Validators.compose([Validators.required]))
     });
    this.usernameFormControl = this.form.controls['username'];
    this.passwordFormControl = this.form.controls['password'];
    this.nameFormControl = this.form.controls['name'];
    this.addressFormControl = this.form.controls['address'];
    this.contactFormControl = this.form.controls['contact'];
+   this.roleFormControl = this.form.controls['role'];
    this.getFormData();
    this.syncFormData();
   }
 
   getFormData() {
-    const subscription: Subscription = this.userService.userFormData$.subscribe(
-      data => {
+    const data: IUser = this.userService.userFormDataModel.get();
         if (data.username !== null) {
         this.usernameFormControl.setValue(data.username);
         this.passwordFormControl.setValue('samplepassword');
         this.nameFormControl.setValue(data.name);
         this.addressFormControl.setValue(data.address);
         this.contactFormControl.setValue(data.contactNumber);
-        subscription.unsubscribe();
         }
-      }
-    );
   }
 
   syncFormData() {
     let newUserData: IUser;
-    this.form.valueChanges.subscribe(
+    this.syncDataSubscription = this.form.valueChanges.subscribe(
       data => {
           newUserData = {
           username: this.usernameFormControl.value,
@@ -91,12 +93,20 @@ public form: FormGroup;
           };
           this.userService.setUserFormData(newUserData);
           if (this.form.valid) {
-            this.userService.setFormValidity(true);
+            this.userService.userFormValidityModel.set(true);
           } else {
-            this.userService.setFormValidity(false);
+            this.userService.userFormValidityModel.set(false);
           }
       }
     );
   }
+
+ngOnDestroy() {
+  this.form.reset();
+  if (this.syncDataSubscription) {
+    this.syncDataSubscription.unsubscribe();
+  }
+}
+  
 
 }
