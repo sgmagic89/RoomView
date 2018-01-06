@@ -7,14 +7,20 @@
       <form [formGroup]="formSystemConfig" (ngSubmit)="saveSystemConfiguration()">
           <div class="formFields">
               <label class="formLabel" for="systemTime">System Time</label>
-              <input id="systemTime" type="text" class="form-control" placeholder="00:00:00" [formControl]="systemTimeFormControl"
-                [appFieldValidator]="systemTimeFormControl" [errorsModel]="errorsmodel" />  
+              <div class="timePicker">
+              <ngb-timepicker  [formControl]="systemTimeFormControl"></ngb-timepicker>
+              </div>
+              <!--<input id="systemTime" type="text" class="form-control" placeholder="00:00:00" [formControl]="systemTimeFormControl"
+                [appFieldValidator]="systemTimeFormControl" [errorsModel]="errorsmodel" />  -->
             </div>
             <span  class="formError" *ngIf="systemTimeFormControl.touched && systemTimeFormControl.errors">{{errors.systemTime}}</span>
             <div class="actionBtnGroup" >
-                <button class="btn btn-secondary" (click)="resetForm()" >Reset</button>
+              <span class="spacer" fxFlex></span>
+              <div class="form-control">
                 <button type="submit" class="btn btn-primary" [disabled]="canSubmit()">Submit</button>
+                <button class="btn btn-secondary" (click)="resetForm()" >Reset</button>
               </div>
+            </div>
       </form>
     </div>
 </div>

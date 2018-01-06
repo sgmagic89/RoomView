@@ -36,9 +36,12 @@
         <span class="formError" *ngIf="smtpServerPortFormControl.touched && smtpServerPortFormControl.errors">{{errors.smtpServerPortError}}</span>
 
        
-        <div class="actionBtnGroup" >
+        <div class="actionBtnGroup">
+          <span class="spacer" fxFlex></span>
+          <div class="form-control">
+            <button type="submit" class="btn btn-primary" [disabled]="canSubmit()">Submit</button>
           <button class="btn btn-secondary" (click)="resetForm()" >Reset</button>
-          <button type="submit" class="btn btn-primary" [disabled]="canSubmit()">Submit</button>
+          </div>
         </div>
         
       </form>
