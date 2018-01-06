@@ -8,7 +8,7 @@ import { ConfigurationComponent } from './components/configuration/configuration
 import { UsermanagementComponent } from './components/usermanagement/usermanagement.component';
 import { AuthGuard } from '../authentication/services/authguard.service';
 import { FirmwareupdateComponent } from './components/firmwareupdate/firmwareupdate.component';
-
+import { ProfileComponent } from './components/profile/profile.component';
 const appRoutes: Routes = [
     {
         path: '',
@@ -37,6 +37,11 @@ const appRoutes: Routes = [
             {
                 path: 'firmwareupdate',
                 component: FirmwareupdateComponent,
+                canActivateChild: [AuthGuard]
+            },
+            {
+                path: 'profile',
+                component: ProfileComponent,
                 canActivateChild: [AuthGuard]
             },
             {

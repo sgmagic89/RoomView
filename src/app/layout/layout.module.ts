@@ -14,7 +14,7 @@ import { ConfigurationService } from './services/configuration/configuration.ser
 import { UserdetailsComponent } from './components/usermanagement/userdetails/userdetails.component';
 import { AdduserComponent } from './components/usermanagement/adduser/adduser.component';
 import { EdituserComponent } from './components/usermanagement/edituser/edituser.component';
-import { ProfileComponent } from './components/usermanagement/profile/profile.component';
+import { ProfileComponent } from './components/profile/profile.component';
 import { UserService } from './services/user/user.service';
 
 @NgModule({
@@ -34,7 +34,7 @@ import { UserService } from './services/user/user.service';
     ProfileComponent
   ],
   imports: [
-    SharedModule,
+  SharedModule,
     LayoutRoutingModule
   ],
   providers: [ConfigurationService, UserService],

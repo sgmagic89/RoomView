@@ -1,15 +1,18 @@
-<div class="addUser">
-  <div class="popupcontainer">
+<div class="profile">
+
+  <div class="maincontainer">
     <div class="header">
         <div class="headertext">
-      Add User
+      Profile
         </div>
     </div>
-
+    <div class="form-container">
     <div class="form">
-          <app-userdetails></app-userdetails>
+      <app-userdetails></app-userdetails>
     </div>
-          <div class="seperator"></div>
+    </div>
+     <div class="seperator"></div>
+     <div class="form-container">
            <div class="form">
           <div class="actionBtnGroup">
           <button type="button" (click)="activeModal.dismiss()" class="btn btn-primary">Cancel</button>
@@ -17,5 +20,6 @@
           <button type="button" (click)="addThisUser()" class="btn btn-secondary" [disabled]="!formValid">Submit</button>
           </div>
            </div>
+    </div>
   </div>
 </div>

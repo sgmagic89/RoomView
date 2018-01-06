@@ -1,3 +1,4 @@
+<div class="form-container-full">
 <form [formGroup]="form">
     <input id="username" type="text" class="form-control" placeholder="Username" 
     [formControl]="usernameFormControl" 
@@ -33,3 +34,4 @@
     [errorsModel] = "errorsmodel" />
     <span class="formError" *ngIf="contactFormControl.touched && contactFormControl.errors">{{errors.nameError}}</span>
 </form>
+</div>
