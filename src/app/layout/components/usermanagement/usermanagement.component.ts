@@ -29,16 +29,16 @@ export class UsermanagementComponent implements OnInit {
 
   startEdit(rowIndex: number) {
     this.userService.setUserFormData(this.rows[rowIndex]);
-    const modalRef = this.modalService.open(EdituserComponent);
+    const modalRef = this.modalService.open(EdituserComponent,{backdrop: "static"});
   }
 
   startDelete(rowIndex: number) {
-    
+
   }
 
   addNewUser() {
     this.userService.setUserFormData(initUser);
-    const modalRef = this.modalService.open(AdduserComponent);
+    const modalRef = this.modalService.open(AdduserComponent, {backdrop: "static"});
 
   }
 

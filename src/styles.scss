@@ -80,6 +80,10 @@ body {
     margin-top: inherit;
 }
 
+.actionBtnGroup > button {
+    flex-grow: 2;
+}
+
 
 .formLabel{
     flex-grow: 1;
@@ -168,9 +172,17 @@ body {
 .spacer {
     flex-grow: 1;
 }
+.space {
+    margin: 0.5rem;
+}
 
 .dataTableContainer {
     margin: 2rem;
+}
+
+.dataTableContainer .actions {
+    font-size: 1.5rem;
+    display: flex;
 }
 
 .maincontainer {

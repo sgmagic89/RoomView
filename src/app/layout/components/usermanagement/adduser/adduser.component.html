@@ -8,7 +8,11 @@
 
     <div class="form">
           <app-userdetails></app-userdetails>
+          <div class="actionBtnGroup">
+          <button type="button" (click)="activeModal.dismiss()" class="btn btn-primary">Cancel</button>
+          <span class="space"> </span>
           <button type="button" (click)="addThisUser()" class="btn btn-secondary" [disabled]="!formValid">Submit</button>
+          </div>
     </div>
   </div>
 </div>
