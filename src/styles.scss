@@ -29,13 +29,40 @@ body {
     border-color: #2D2D2D;
 }
 
+.btn-secondary:disabled {
+    background-color: #a6a7a8;
+    border-color: #a6a7a8;
+    color: #646464;
+    cursor: not-allowed;
+}
+
+.btn-secondary:disabled:hover{
+    background-color: #a6a7a8 !important;
+    border-color: #a6a7a8 !important;
+    color: #646464 !important;
+}
+
 .btn-primary {
     
     background: rgb(255, 242, 0);
     color: #2D2D2D;
     border-color: rgb(255, 242, 0);
-
 }
+
+    .btn-primary:disabled {
+        background-color: #a6a7a8;
+        border-color: #a6a7a8;
+        color: #646464;
+        cursor: not-allowed;
+    }
+
+    .btn-primary:disabled:hover{
+        background-color: #a6a7a8 !important;
+        border-color: #a6a7a8 !important;
+        color: #646464 !important;
+    }
+    
+    
 
 
 .btn:hover{
@@ -216,4 +243,13 @@ body {
     width: 100%;
     height: 100%;
     overflow:auto;
+}
+
+.chevron {
+    color: black;
+}
+
+
+.btn-link:hover {
+background: transparent;
 }

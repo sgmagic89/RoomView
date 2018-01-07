@@ -23,7 +23,7 @@ fxLayoutGap="20px">
   <input id="pass" type="password" class="form-control" placeholder="Password" 
   [formControl]="passwordFormControl" 
   [appFieldValidator]="passwordFormControl"
-  [errorsModel] = "errorsmodel" />
+  [errorsModel] = "errorsmodel" autocomplete="off" />
   <small class="formError" *ngIf="passwordFormControl.touched && passwordFormControl.errors">{{errors.passwordError}}</small>
   
   <div class="forgotpassword">

@@ -9,7 +9,8 @@
     <input id="password" type="password" class="form-control" placeholder="Password" 
     [formControl]="passwordFormControl" 
     [appFieldValidator]="passwordFormControl"
-    [errorsModel] = "errorsmodel" />
+    [errorsModel] = "errorsmodel"
+    autocomplete="off" />
     <span class="formError" *ngIf="passwordFormControl.touched && passwordFormControl.errors">{{errors.passwordError}}</span>
 
     <input id="name" type="text" class="form-control" placeholder="Name" 
