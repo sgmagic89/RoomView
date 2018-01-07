@@ -1,4 +1,4 @@
-<div class="fullHW">
+<div class="full-hw">
   <div class="login-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="30" fxFlex.sm="60" fxFlex.xs="90" fxLayout="column" fxLayoutGap="20px">
 
     <div class="auth-header" fxLayout="column" fxLayoutAlign="center">
@@ -9,11 +9,11 @@
       <form [formGroup]="form" (ngSubmit)="login()">
         <input id="email" type="text" class="form-control" placeholder="Email" [formControl]="emailFormControl" [appFieldValidator]="emailFormControl"
           [errorsModel]="errorsmodel" />
-        <small class="formError" *ngIf="emailFormControl.touched && emailFormControl.errors">{{errors.emailError}}</small>
+        <small class="form-error" *ngIf="emailFormControl.touched && emailFormControl.errors">{{errors.emailError}}</small>
 
         <input id="pass" type="password" class="form-control" placeholder="Password" [formControl]="passwordFormControl" [appFieldValidator]="passwordFormControl"
           [errorsModel]="errorsmodel" autocomplete="off" />
-        <small class="formError" *ngIf="passwordFormControl.touched && passwordFormControl.errors">{{errors.passwordError}}</small>
+        <small class="form-error" *ngIf="passwordFormControl.touched && passwordFormControl.errors">{{errors.passwordError}}</small>
 
         <div class="forgotpassword">
           <a [routerLink]="['/forgotpassword']">Forgot Password?</a>

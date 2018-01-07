@@ -4,37 +4,37 @@
   </div>
   <div class="form">
     <form [formGroup]="form" (ngSubmit)="saveSmtpConfiguration()">
-      <div class="formFields">
-        <label class="formLabel" for="smtpServerAddress">SMTP Server Address</label>
+      <div class="form-fields">
+        <label class="form-label" for="smtpServerAddress">SMTP Server Address</label>
         <input id="smtpServerAddress" type="text" class="form-control" placeholder="Server Address" [formControl]="smtpServerAddressFormControl"
           [appFieldValidator]="smtpServerAddressFormControl" [errorsModel]="errorsmodel" />
       </div>
-      <span class="formError" *ngIf="smtpServerAddressFormControl.touched && smtpServerAddressFormControl.errors">{{errors.smtpServerAddress}}</span>
+      <span class="form-error" *ngIf="smtpServerAddressFormControl.touched && smtpServerAddressFormControl.errors">{{errors.smtpServerAddress}}</span>
 
 
-      <div class="formFields">
-        <label class="formLabel" for="server">SMTP Username</label>
+      <div class="form-fields">
+        <label class="form-label" for="server">SMTP Username</label>
         <input id="smtpServerUsername" type="text" class="form-control" placeholder="Username" [formControl]="smtpServerUsernameFormControl"
           [appFieldValidator]="smtpServerUsernameFormControl" [errorsModel]="errorsmodel" />
       </div>
-      <span class="formError" *ngIf="smtpServerUsernameFormControl.touched && smtpServerUsernameFormControl.errors">{{errors.smtpServerUsername}}</span>
+      <span class="form-error" *ngIf="smtpServerUsernameFormControl.touched && smtpServerUsernameFormControl.errors">{{errors.smtpServerUsername}}</span>
 
-      <div class="formFields">
-        <label class="formLabel" for="smtpServerPassword">SMTP Password</label>
+      <div class="form-fields">
+        <label class="form-label" for="smtpServerPassword">SMTP Password</label>
         <input id="smtpServerPassword" type="password" class="form-control" placeholder="Password" [formControl]="smtpServerPasswordFormControl"
           [appFieldValidator]="smtpServerPasswordFormControl" [errorsModel]="errorsmodel" autocomplete="off" />
       </div>
-      <span class="formError" *ngIf="smtpServerPasswordFormControl.touched && smtpServerPasswordFormControl.errors">{{errors.smtpServerPassword}}</span>
+      <span class="form-error" *ngIf="smtpServerPasswordFormControl.touched && smtpServerPasswordFormControl.errors">{{errors.smtpServerPassword}}</span>
 
-      <div class="formFields">
-        <label class="formLabel" for="smtpServerPort">SMTP Port</label>
+      <div class="form-fields">
+        <label class="form-label" for="smtpServerPort">SMTP Port</label>
         <input id="smtpServerPort" type="text" class="form-control" placeholder="Port" [formControl]="smtpServerPortFormControl"
           [appFieldValidator]="smtpServerPortFormControl" [errorsModel]="errorsmodel" />
       </div>
-      <span class="formError" *ngIf="smtpServerPortFormControl.touched && smtpServerPortFormControl.errors">{{errors.smtpServerPortError}}</span>
+      <span class="form-error" *ngIf="smtpServerPortFormControl.touched && smtpServerPortFormControl.errors">{{errors.smtpServerPortError}}</span>
 
 
-      <div class="actionBtnGroup">
+      <div class="action-btn-group">
         <span class="space" fxFlex></span>
         <div class="form-control">
           <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Submit</button>

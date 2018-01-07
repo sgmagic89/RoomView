@@ -47,25 +47,25 @@
     color: $disabled-text-color;
 }
 
-.actionBtnGroup {
+.action-btn-group {
     display: flex;
     flex-direction: row;
     // padding:0rem 1rem 0rem 1rem;
 }
 
-.actionBtnGroup .form-control {
+.action-btn-group .form-control {
     border: none !important;
     display: flex;
     flex-direction: row !important;
     padding: 0;
 }
 
-.actionBtnGroup .form-control > button {
+.action-btn-group .form-control > button {
     margin-left: 1rem;
     margin-top: inherit;
 }
 
-.actionBtnGroup > button {
+.action-btn-group > button {
     flex-grow: 2;
     margin-top: 5px;
 }

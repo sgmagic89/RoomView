@@ -2,15 +2,15 @@
   <form [formGroup]="form">
     <input id="username" type="text" class="form-control" placeholder="Username" [formControl]="usernameFormControl" [appFieldValidator]="usernameFormControl"
       [errorsModel]="errorsmodel" />
-    <span class="formError" *ngIf="usernameFormControl.touched && usernameFormControl.errors">{{errors.usernameError}}</span>
+    <span class="form-error" *ngIf="usernameFormControl.touched && usernameFormControl.errors">{{errors.usernameError}}</span>
 
     <input id="password" type="password" class="form-control" placeholder="Password" [formControl]="passwordFormControl" [appFieldValidator]="passwordFormControl"
       [errorsModel]="errorsmodel" autocomplete="off" />
-    <span class="formError" *ngIf="passwordFormControl.touched && passwordFormControl.errors">{{errors.passwordError}}</span>
+    <span class="form-error" *ngIf="passwordFormControl.touched && passwordFormControl.errors">{{errors.passwordError}}</span>
 
     <input id="name" type="text" class="form-control" placeholder="Name" [formControl]="nameFormControl" [appFieldValidator]="nameFormControl"
       [errorsModel]="errorsmodel" />
-    <span class="formError" *ngIf="nameFormControl.touched && nameFormControl.errors">{{errors.nameError}}</span>
+    <span class="form-error" *ngIf="nameFormControl.touched && nameFormControl.errors">{{errors.nameError}}</span>
 
     <select class="form-control" [formControl]="roleFormControl">
       <option *ngFor="let role of roles" [ngValue]="role">{{role}}</option>
@@ -18,10 +18,10 @@
 
     <input id="address" type="text" class="form-control" placeholder="Address" [formControl]="addressFormControl" [appFieldValidator]="addressFormControl"
       [errorsModel]="errorsmodel" />
-    <span class="formError" *ngIf="addressFormControl.touched && addressFormControl.errors">{{errors.nameError}}</span>
+    <span class="form-error" *ngIf="addressFormControl.touched && addressFormControl.errors">{{errors.nameError}}</span>
 
     <input id="contact" type="text" class="form-control" placeholder="Contact Number" [formControl]="contactFormControl" [appFieldValidator]="contactFormControl"
       [errorsModel]="errorsmodel" />
-    <span class="formError" *ngIf="contactFormControl.touched && contactFormControl.errors">{{errors.nameError}}</span>
+    <span class="form-error" *ngIf="contactFormControl.touched && contactFormControl.errors">{{errors.nameError}}</span>
   </form>
 </div>

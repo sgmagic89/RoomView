@@ -19,7 +19,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.basecontainer {
+.base-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,14 +28,14 @@ body {
     margin-top: 2rem;
 }
 
-.maincontainer {
+.main-container {
     background: $alternate-color;
     width: 95%;
     height: 100%;
     overflow:auto;
 }
 
-.popupcontainer {
+.modal-container {
     background: $alternate-color;
     width: 100%;
     height: 100%;

@@ -4,42 +4,42 @@
   </div>
   <div class="form">
     <form [formGroup]="form" (ngSubmit)="saveNetworkConfiguration()">
-      <div class="formFields">
-        <label class="formLabel" for="networkName">Network Name</label>
+      <div class="form-fields">
+        <label class="form-label" for="networkName">Network Name</label>
         <input id="networkName" type="text" class="form-control" placeholder="Name" [formControl]="networkNameFormControl" [appFieldValidator]="networkNameFormControl"
           [errorsModel]="errorsmodel" />
       </div>
-      <span class="formError" *ngIf="networkNameFormControl.touched && networkNameFormControl.errors">{{errors.networkNameError}}</span>
+      <span class="form-error" *ngIf="networkNameFormControl.touched && networkNameFormControl.errors">{{errors.networkNameError}}</span>
 
 
-      <div class="formFields">
-        <label class="formLabel" for="threadMasterKey">Thread Master Key</label>
+      <div class="form-fields">
+        <label class="form-label" for="threadMasterKey">Thread Master Key</label>
         <input id="threadMasterKey" type="text" class="form-control" placeholder="Master Key" [formControl]="threadMasterKeyFormControl"
           [appFieldValidator]="threadMasterKeyFormControl" [errorsModel]="errorsmodel" />
       </div>
-      <span class="formError" *ngIf="threadMasterKeyFormControl.touched && threadMasterKeyFormControl.errors">{{errors.threadMasterKeyError}}</span>
+      <span class="form-error" *ngIf="threadMasterKeyFormControl.touched && threadMasterKeyFormControl.errors">{{errors.threadMasterKeyError}}</span>
 
-      <div class="formFields">
-        <label class="formLabel" for="threadChannel">Thread Channel</label>
+      <div class="form-fields">
+        <label class="form-label" for="threadChannel">Thread Channel</label>
         <input id="threadChannel" type="text" class="form-control" placeholder="Channel" [formControl]="threadChannelFormControl"
           [appFieldValidator]="threadChannelFormControl" [errorsModel]="errorsmodel" />
       </div>
-      <span class="formError" *ngIf="threadChannelFormControl.touched && threadChannelFormControl.errors">{{errors.threadChannelError}}</span>
+      <span class="form-error" *ngIf="threadChannelFormControl.touched && threadChannelFormControl.errors">{{errors.threadChannelError}}</span>
 
-      <div class="formFields">
-        <label class="formLabel" for="threadPanId">Thread Panid</label>
+      <div class="form-fields">
+        <label class="form-label" for="threadPanId">Thread Panid</label>
         <input id="threadPanId" type="text" class="form-control" placeholder="Panid" [formControl]="threadPanIdFormControl" [appFieldValidator]="threadPanIdFormControl"
           [errorsModel]="errorsmodel" />
       </div>
-      <span class="formError" *ngIf="threadPanIdFormControl.touched && threadPanIdFormControl.errors">{{errors.threadPanIdError}}</span>
+      <span class="form-error" *ngIf="threadPanIdFormControl.touched && threadPanIdFormControl.errors">{{errors.threadPanIdError}}</span>
 
-      <div class="formFields">
-        <label class="formLabel" for="threadExtendedPanId">Thread Extended Panid</label>
+      <div class="form-fields">
+        <label class="form-label" for="threadExtendedPanId">Thread Extended Panid</label>
         <input id="threadExtendedPanId" type="text" class="form-control" placeholder="Extended Panid" [formControl]="threadExtendedPanIdFormControl"
           [appFieldValidator]="threadExtendedPanIdFormControl" [errorsModel]="errorsmodel" />
       </div>
-      <span class="formError" *ngIf="threadExtendedPanIdFormControl.touched && threadExtendedPanIdFormControl.errors">{{errors.threadExtendedPanIdError}}</span>
-      <div class="actionBtnGroup">
+      <span class="form-error" *ngIf="threadExtendedPanIdFormControl.touched && threadExtendedPanIdFormControl.errors">{{errors.threadExtendedPanIdError}}</span>
+      <div class="action-btn-group">
         <span class="space" fxFlex></span>
         <div class="form-control">
           <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Submit</button>

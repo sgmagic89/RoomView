@@ -2,12 +2,12 @@
     margin: 1rem 2rem 1rem 2rem;
 }
 
-.formError {
+.form-error {
     color: $error-color;
     margin-bottom: 1rem;
 }
 
-.formFields {
+.form-fields {
     display: flex;
     flex-direction: row;
     align-items: baseline;
@@ -15,13 +15,13 @@
 }
 
 
-.formLabel{
+.form-label{
     flex-grow: 1;
     flex-basis: 0;
     align-self: baseline;
 }
 
-.formLabel.systemTime{
+.form-label.systemTime{
     align-self: center;
 }
 

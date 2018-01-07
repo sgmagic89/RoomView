@@ -1,16 +1,16 @@
-<div class="basecontainer">
-  <div class="maincontainer">
+<div class="base-container">
+  <div class="main-container">
     <div class="header">
-      <div class="headertext">
+      <div class="header-text">
         User List
       </div>
 
-      <div class="headeraction">
+      <div class="header-action">
         <i class="fa fa-plus addaction" placement="top" ngbTooltip="Add User" aria-hidden="true" (click)="addNewUser()"></i>
       </div>
 
     </div>
-    <div class="dataTableContainer">
+    <div class="data-table-container">
       <ngx-datatable #tblUser class='material' [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rows]='rows' [limit]="10"
         [rowHeight]="'auto'">
 

@@ -4,14 +4,14 @@
   </div>
   <div class="form">
     <form [formGroup]="form" (ngSubmit)="saveSystemConfiguration()">
-      <div class="formFields">
-        <label class="formLabel systemTime" for="systemTime">System Time</label>
+      <div class="form-fields">
+        <label class="form-label systemTime" for="systemTime">System Time</label>
         <div class="timePicker">
           <ngb-timepicker id="systemTime" [formControl]="systemTimeFormControl"></ngb-timepicker>
         </div>
       </div>
-      <span class="formError" *ngIf="systemTimeFormControl.touched && systemTimeFormControl.errors">{{errors.systemTime}}</span>
-      <div class="actionBtnGroup">
+      <span class="form-error" *ngIf="systemTimeFormControl.touched && systemTimeFormControl.errors">{{errors.systemTime}}</span>
+      <div class="action-btn-group">
         <span class="space" fxFlex></span>
         <div class="form-control">
           <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Submit</button>

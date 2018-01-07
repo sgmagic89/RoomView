@@ -8,17 +8,17 @@
     justify-content: space-between;
 }
 
-.headertext {
+.header-text {
     align-self: center;
     color: $primary-color;
 }
 
-.headeraction {
+.header-action {
     align-self: center;
     color: $primary-color;
 }
 
-.headeraction .fa {
+.header-action .fa {
     background: $disabled-text-color;
     padding: 0.5em;
     text-align: center;
@@ -28,7 +28,7 @@
     cursor: pointer;
 }
 
-.headeraction .fa:hover {
+.header-action .fa:hover {
     background: $alternate-color;
     padding: 0.5em;
     text-align: center;
