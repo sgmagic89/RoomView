@@ -6,7 +6,7 @@
     <div class="form">
       <form [formGroup]="form" (ngSubmit)="saveSystemConfiguration()">
         <div class="formFields">
-          <label class="formLabel" for="systemTime">System Time</label>
+          <label class="formLabel systemTime" for="systemTime">System Time</label>
           <div class="timePicker">
             <ngb-timepicker id="systemTime" [formControl]="systemTimeFormControl"></ngb-timepicker>
           </div>

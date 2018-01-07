@@ -115,9 +115,12 @@ body {
 
 .formLabel{
     flex-grow: 1;
-    vertical-align: center;
     flex-basis: 0;
-    vertical-align: middle;
+    align-self: baseline;
+}
+
+.formLabel.systemTime{
+    align-self: center;
 }
 
 .form-control {
@@ -127,7 +130,7 @@ body {
 }
 
 .timePicker  {
-    flex-grow: 1.3;
+    flex-grow: 1.4;
 }
 
 
