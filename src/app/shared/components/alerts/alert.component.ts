@@ -5,8 +5,7 @@ import { Alert, AlertType } from '../../models/alert.model';
 @Component({
     moduleId: module.id,
     selector: 'app-alert',
-    templateUrl: './alert.component.html',
-    styleUrls: ['./alert.component.scss']
+    templateUrl: './alert.component.html'
 })
 
 export class AlertComponent implements OnInit {

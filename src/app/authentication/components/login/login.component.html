@@ -1,11 +1,11 @@
 <div class="fullHW">
-  <div class="container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="30" fxFlex.sm="60" fxFlex.xs="90" fxLayout="column" fxLayoutGap="20px">
+  <div class="login-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="30" fxFlex.sm="60" fxFlex.xs="90" fxLayout="column" fxLayoutGap="20px">
 
-    <div class="loginHeader" fxLayout="column" fxLayoutAlign="center">
+    <div class="auth-header" fxLayout="column" fxLayoutAlign="center">
       <img class="logo" src="/assets/logo.png" />
     </div>
 
-    <div class="loginForm">
+    <div class="auth-form">
       <form [formGroup]="form" (ngSubmit)="login()">
         <input id="email" type="text" class="form-control" placeholder="Email" [formControl]="emailFormControl" [appFieldValidator]="emailFormControl"
           [errorsModel]="errorsmodel" />

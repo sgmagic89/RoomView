@@ -1,0 +1,40 @@
+.header {
+    height: 3rem;
+    background: $disabled-back-color;
+    font-weight: bold;
+    display: flex;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    justify-content: space-between;
+}
+
+.headertext {
+    align-self: center;
+}
+
+.headeraction {
+    align-self: center;
+}
+
+.headeraction .fa {
+    background: $disabled-text-color;
+    padding: 0.5em;
+    text-align: center;
+    display: inline;
+    border-radius: 50%;
+    line-height: 50px;  /** for vertical center - if needed **/
+    cursor: pointer;
+}
+
+.headeraction .fa:hover {
+    background: $alternate-color;
+    padding: 0.5em;
+    text-align: center;
+    display: inline;
+    border-radius: 50%;
+    line-height: 50px;  /** for vertical center - if needed **/
+}
+
+.heading {
+    font-weight: bold;
+}

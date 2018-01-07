@@ -1,28 +1,23 @@
-<div class="systemConfig">
-  <div class="form-container">
-    <div class="heading">
-      System Configuration
-    </div>
-    <div class="form">
-      <form [formGroup]="form" (ngSubmit)="saveSystemConfiguration()">
-        <div class="formFields">
-          <label class="formLabel systemTime" for="systemTime">System Time</label>
-          <div class="timePicker">
-            <ngb-timepicker id="systemTime" [formControl]="systemTimeFormControl"></ngb-timepicker>
-          </div>
-          <!--<input id="systemTime" type="text" class="form-control" placeholder="00:00:00" [formControl]="systemTimeFormControl"
-                [appFieldValidator]="systemTimeFormControl" [errorsModel]="errorsmodel" />  -->
-        </div>
-        <span class="formError" *ngIf="systemTimeFormControl.touched && systemTimeFormControl.errors">{{errors.systemTime}}</span>
-        <div class="actionBtnGroup">
-          <span class="spacer" fxFlex></span>
-          <div class="form-control">
-            <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Submit</button>
-            <button class="btn btn-secondary" (click)="resetForm()">Reset</button>
-          </div>
-        </div>
-      </form>
-    </div>
+<div class="form-container">
+  <div class="heading">
+    System Configuration
   </div>
-
+  <div class="form">
+    <form [formGroup]="form" (ngSubmit)="saveSystemConfiguration()">
+      <div class="formFields">
+        <label class="formLabel systemTime" for="systemTime">System Time</label>
+        <div class="timePicker">
+          <ngb-timepicker id="systemTime" [formControl]="systemTimeFormControl"></ngb-timepicker>
+        </div>
+      </div>
+      <span class="formError" *ngIf="systemTimeFormControl.touched && systemTimeFormControl.errors">{{errors.systemTime}}</span>
+      <div class="actionBtnGroup">
+        <span class="space" fxFlex></span>
+        <div class="form-control">
+          <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Submit</button>
+          <button class="btn btn-secondary" (click)="resetForm()">Reset</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>

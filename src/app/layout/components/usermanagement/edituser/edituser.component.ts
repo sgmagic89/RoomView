@@ -3,8 +3,7 @@ import { UserService } from '../../../services/user/user.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-edituser',
-  templateUrl: './edituser.component.html',
-  styleUrls: ['./edituser.component.scss']
+  templateUrl: './edituser.component.html'
 })
 export class EdituserComponent implements OnInit {
   formValid = false;

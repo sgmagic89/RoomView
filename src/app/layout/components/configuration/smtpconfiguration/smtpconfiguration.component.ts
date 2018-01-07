@@ -9,8 +9,7 @@ import { Errors } from '../../../../shared/models/error.model';
 import { CustomValidators } from 'ng2-validation';
 @Component({
   selector: 'app-smtpconfiguration',
-  templateUrl: './smtpconfiguration.component.html',
-  styleUrls: ['./smtpconfiguration.component.scss']
+  templateUrl: './smtpconfiguration.component.html'
 })
 export class SmtpconfigurationComponent implements OnInit {
   public form: FormGroup;

@@ -6,8 +6,7 @@ import { IUser } from '../../../models/user/user.model';
 
 @Component({
   selector: 'app-adduser',
-  templateUrl: './adduser.component.html',
-  styleUrls: ['./adduser.component.scss']
+  templateUrl: './adduser.component.html'
 })
 export class AdduserComponent implements OnInit {
 

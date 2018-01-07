@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-control',
-  templateUrl: './control.component.html',
-  styleUrls: ['./control.component.scss']
+  templateUrl: './control.component.html'
 })
 export class ControlComponent implements OnInit {
 

@@ -1,0 +1,75 @@
+.btn {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.btn:hover{
+    background: $primary-color;
+    color: $alternate-color;
+    border-color: $primary-color;
+}
+
+.btn-primary {
+    background: $secondary-color;
+    color: $primary-color;
+    border-color: $secondary-color;
+}
+
+.btn-primary:disabled {
+    background-color: $disabled-back-color;
+    border-color: $disabled-back-color;
+    color: $disabled-text-color;
+    cursor: not-allowed;
+}
+
+.btn-primary:disabled:hover{
+    background-color: $disabled-back-color;
+    border-color: $disabled-back-color;
+    color: $disabled-text-color;
+}
+
+.btn-secondary {
+    background: $primary-color;
+    color: $secondary-color;
+    border-color: $primary-color;
+}
+
+.btn-secondary:disabled {
+    background-color: $disabled-back-color;
+    border-color: $disabled-back-color;
+    color: $disabled-text-color;
+    cursor: not-allowed;
+}
+
+.btn-secondary:disabled:hover{
+    background-color: $disabled-back-color;
+    border-color: $disabled-back-color;
+    color: $disabled-text-color;
+}
+
+.actionBtnGroup {
+    display: flex;
+    flex-direction: row;
+    // padding:0rem 1rem 0rem 1rem;
+}
+
+.actionBtnGroup .form-control {
+    border: none !important;
+    display: flex;
+    flex-direction: row !important;
+    padding: 0;
+}
+
+.actionBtnGroup .form-control > button {
+    margin-left: 1rem;
+    margin-top: inherit;
+}
+
+.actionBtnGroup > button {
+    flex-grow: 2;
+    margin-top: 5px;
+}
+
+.btn-link:hover {
+background: transparent;
+}

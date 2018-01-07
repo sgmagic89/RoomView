@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-provision',
-  templateUrl: './provision.component.html',
-  styleUrls: ['./provision.component.scss']
+  templateUrl: './provision.component.html'
 })
 export class ProvisionComponent implements OnInit {
 

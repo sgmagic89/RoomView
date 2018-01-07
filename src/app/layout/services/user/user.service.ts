@@ -68,6 +68,9 @@ constructor(private api: ApiService,
             }
         },
         error => {
+            const currentUsers: IUser[] = this.usersModel.get();
+                currentUsers.push(user);
+                this.usersModel.set(currentUsers);
             console.log(error);
         },
         () => {

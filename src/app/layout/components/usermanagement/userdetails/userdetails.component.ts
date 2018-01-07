@@ -9,8 +9,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { IUser } from '../../../models/user/user.model';
 @Component({
   selector: 'app-userdetails',
-  templateUrl: './userdetails.component.html',
-  styleUrls: ['./userdetails.component.scss']
+  templateUrl: './userdetails.component.html'
 })
 export class UserdetailsComponent implements OnInit, OnDestroy {
 public form: FormGroup;

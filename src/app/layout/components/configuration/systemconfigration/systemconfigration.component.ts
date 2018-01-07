@@ -9,8 +9,7 @@ import { Errors } from '../../../../shared/models/error.model';
 import { CustomValidators } from 'ng2-validation';
 @Component({
   selector: 'app-systemconfigration',
-  templateUrl: './systemconfigration.component.html',
-  styleUrls: ['./systemconfigration.component.scss']
+  templateUrl: './systemconfigration.component.html'
 })
 export class SystemconfigrationComponent implements OnInit {
   public form: FormGroup;

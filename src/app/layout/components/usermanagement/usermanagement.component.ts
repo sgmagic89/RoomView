@@ -7,8 +7,7 @@ import { AdduserComponent } from './adduser/adduser.component';
 import { EdituserComponent } from './edituser/edituser.component';
 @Component({
   selector: 'app-usermanagement',
-  templateUrl: './usermanagement.component.html',
-  styleUrls: ['./usermanagement.component.scss']
+  templateUrl: './usermanagement.component.html'
 })
 export class UsermanagementComponent implements OnInit {
   rows = [];

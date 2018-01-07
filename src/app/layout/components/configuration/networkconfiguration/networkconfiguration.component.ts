@@ -10,8 +10,7 @@ import { CustomValidators } from 'ng2-validation';
 
 @Component({
   selector: 'app-networkconfiguration',
-  templateUrl: './networkconfiguration.component.html',
-  styleUrls: ['./networkconfiguration.component.scss']
+  templateUrl: './networkconfiguration.component.html'
 })
 export class NetworkconfigurationComponent implements OnInit {
 
