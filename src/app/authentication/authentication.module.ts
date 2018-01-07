@@ -8,7 +8,6 @@ import { AuthenticationService } from './services/authentication.service';
 
 @NgModule({
   imports: [
-    CommonModule,
     AuthRoutingModule,
     SharedModule
   ],

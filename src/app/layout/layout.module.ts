@@ -34,7 +34,7 @@ import { UserService } from './services/user/user.service';
     ProfileComponent
   ],
   imports: [
-  SharedModule,
+    SharedModule,
     LayoutRoutingModule
   ],
   providers: [ConfigurationService, UserService],

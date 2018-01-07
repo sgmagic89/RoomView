@@ -1,17 +1,17 @@
 <div class="leftNavBar">
-  <div class="leftNavActions"  fxLayout="row" fxLayoutAlign="center" >
+  <div class="leftNavActions" fxLayout="row" fxLayoutAlign="center">
     <div class="provisionactions" fxLayoutGap="1rem" *ngIf="isProvision">
-      <a ngbTooltip="Add Group" data-placement="bottom"  container="body" class="fa fa-plus"></a>
+      <a ngbTooltip="Add Group" data-placement="bottom" container="body" class="fa fa-plus"></a>
       <a ngbTooltip="Delete Group" data-placement="bottom" container="body" class="fa fa-times"></a>
       <a ngbTooltip="Edit Group" data-placement="bottom" container="body" class="fa fa-pencil"></a>
       <a ngbTooltip="Assign Group" data-placement="bottom" container="body" class="fa fa-check-square-o"></a>
     </div>
 
     <div class="controlactions" *ngIf="!isProvision">
-      <a>Room</a> 
+      <a>Room</a>
     </div>
   </div>
   <div class="devicesList">
-      <tree-root [nodes]="nodes" [options]="options"></tree-root>
+    <tree-root [nodes]="nodes" [options]="options"></tree-root>
   </div>
 </div>

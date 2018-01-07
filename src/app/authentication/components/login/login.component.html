@@ -1,40 +1,29 @@
 <div class="fullHW">
-<div class="container"
-fxFlex.xl="20" 
-fxFlex.lg="25" 
-fxFlex.md="30" 
-fxFlex.sm="60" 
-fxFlex.xs="90"
-fxLayout="column"
-fxLayoutGap="20px">
+  <div class="container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="30" fxFlex.sm="60" fxFlex.xs="90" fxLayout="column" fxLayoutGap="20px">
 
-<div class="loginHeader" fxLayout="column" fxLayoutAlign="center" >
-  <img class="logo" src="/assets/logo.png" />
-</div>
+    <div class="loginHeader" fxLayout="column" fxLayoutAlign="center">
+      <img class="logo" src="/assets/logo.png" />
+    </div>
 
-<div class="loginForm">
-<form [formGroup]="form" (ngSubmit)="login()">
-  <input id="email" type="text" class="form-control" placeholder="Email" 
-  [formControl]="emailFormControl" 
-  [appFieldValidator]="emailFormControl"
-  [errorsModel] = "errorsmodel" />
-  <small class="formError" *ngIf="emailFormControl.touched && emailFormControl.errors">{{errors.emailError}}</small>
+    <div class="loginForm">
+      <form [formGroup]="form" (ngSubmit)="login()">
+        <input id="email" type="text" class="form-control" placeholder="Email" [formControl]="emailFormControl" [appFieldValidator]="emailFormControl"
+          [errorsModel]="errorsmodel" />
+        <small class="formError" *ngIf="emailFormControl.touched && emailFormControl.errors">{{errors.emailError}}</small>
 
-  <input id="pass" type="password" class="form-control" placeholder="Password" 
-  [formControl]="passwordFormControl" 
-  [appFieldValidator]="passwordFormControl"
-  [errorsModel] = "errorsmodel" autocomplete="off" />
-  <small class="formError" *ngIf="passwordFormControl.touched && passwordFormControl.errors">{{errors.passwordError}}</small>
-  
-  <div class="forgotpassword">
-    <a [routerLink]="['/forgotpassword']">Forgot Password?</a>
+        <input id="pass" type="password" class="form-control" placeholder="Password" [formControl]="passwordFormControl" [appFieldValidator]="passwordFormControl"
+          [errorsModel]="errorsmodel" autocomplete="off" />
+        <small class="formError" *ngIf="passwordFormControl.touched && passwordFormControl.errors">{{errors.passwordError}}</small>
+
+        <div class="forgotpassword">
+          <a [routerLink]="['/forgotpassword']">Forgot Password?</a>
+        </div>
+
+
+        <button type="submit" class="btn btn-secondary" [disabled]="!form.valid">Login</button>
+      </form>
+
+    </div>
+
   </div>
-  
-  
-  <button type="submit" class="btn btn-secondary" [disabled]="!form.valid">Login</button>
-</form>
-  
-</div>
-
-</div>
 </div>
