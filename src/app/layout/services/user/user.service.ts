@@ -30,14 +30,30 @@ constructor(private api: ApiService,
     this.userFormValidity$ = this.userFormValidityModel.data$;
 }
 
+/**
+    * setUserFormData() - Set the user form data model
+    * @param <IUser> User data to set
+    * @return <None> No Return value
+    */
  public setUserFormData(user: IUser) {
      this.userFormDataModel.set(user);
  }
 
+ /**
+    * setFormValidity() - Set the user form validity
+    * @param <boolean> Form valid (true/false)
+    * @return <None> No Return value
+    */
  public setFormValidity(validity: boolean) {
     this.userFormValidityModel.set(validity);
  }
 
+
+  /**
+    * getAllUsers() - Get all users by calling the API
+    * @param <None> No parameter
+    * @return <Observable<IUser[]>> Returns array of user Observable
+    */
  public getAllUsers(): Observable<IUser[]> {
      const apiSubscription: Subscription = this.api.usermanagement_get_all_users()
      .subscribe(
@@ -57,6 +73,12 @@ constructor(private api: ApiService,
      return this.users$;
  }
 
+ /**
+    * createUser() - Create an user by calling the API
+    Request to create an user. If success update the user list model
+    * @param <IUser> User to create
+    * @return <None> No return value
+    */
  public createUser(user: IUser) {
     const apiSubscription: Subscription = this.api.usermanagement_create_user(user)
     .subscribe(
@@ -68,9 +90,6 @@ constructor(private api: ApiService,
             }
         },
         error => {
-            const currentUsers: IUser[] = this.usersModel.get();
-                currentUsers.push(user);
-                this.usersModel.set(currentUsers);
             console.log(error);
         },
         () => {
@@ -79,6 +98,12 @@ constructor(private api: ApiService,
     );
  }
 
+  /**
+    * deleteUser() - Delete an user by calling the API
+    Request to delete an user. If success update the user list model
+    * @param <IUser> User to delete
+    * @return <None> No return value
+    */
  public deleteUser(userToDelete: IUser) {
     const apiSubscription: Subscription = this.api.usermanagement_delete_user(userToDelete)
     .subscribe(
@@ -103,6 +128,12 @@ constructor(private api: ApiService,
     );
  }
 
+ /**
+    * updateUser() - Update an user by calling the API
+    Request to update an user. If success update the user list model
+    * @param <IUser> User to delete
+    * @return <None> No return value
+    */
  public updateUser(updatedUser: IUser) {
     const apiSubscription: Subscription = this.api.usermanagement_update_user(updatedUser)
     .subscribe(

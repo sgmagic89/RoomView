@@ -18,6 +18,12 @@ export class EdituserComponent implements OnInit {
     );
   }
 
+   /**
+    * saveChanges() - Call the updateUser function of user service
+    It collects the user data from the UserDetails form by subscribing the userFormData$ observable of user service.
+    * @param <None> No Parameter
+    * @return <None> No return value
+    */
   saveChanges() {
   }
 

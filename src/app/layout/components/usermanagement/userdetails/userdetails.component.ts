@@ -48,6 +48,11 @@ public form: FormGroup;
    this.syncFormData();
   }
 
+    /**
+    * initForm() - Initialize the form
+    * @param <None> No Parameter
+    * @return <None> No return value
+    */
   initForm() {
     this.form = this.fb.group({
       username: new FormControl(null, Validators.compose([Validators.required, CustomValidators.email])),
@@ -65,6 +70,11 @@ public form: FormGroup;
    this.roleFormControl = this.form.controls['role'];
   }
 
+    /**
+    * initErrorModel() - Initialize the error model for the form
+    * @param <None> No Parameter
+    * @return <None> No return value
+    */
   initErrorModel() {
     this.errorsmodel = this.errorModelFactory.create(this.errors);
       this.errors$ = this.errorsmodel.data$;
@@ -76,6 +86,12 @@ public form: FormGroup;
     });
   }
 
+    /**
+    * getFormData() - Try to get the form data from user service
+    If data found set the data in the form if not initialize the form with blank data
+    * @param <None> No Parameter
+    * @return <None> No return value
+    */
   getFormData() {
     const data: IUser = this.userService.userFormDataModel.get();
         if (data.username !== null) {
@@ -87,6 +103,11 @@ public form: FormGroup;
         }
   }
 
+  /**
+    * syncFormData() - Sync the user entered value and the data model in user service
+    * @param <None> No Parameter
+    * @return <None> No return value
+    */
   syncFormData() {
     let newUserData: IUser;
     this.syncDataSubscription = this.form.valueChanges.subscribe(
@@ -114,6 +135,5 @@ ngOnDestroy() {
     this.syncDataSubscription.unsubscribe();
   }
 }
-  
 
 }

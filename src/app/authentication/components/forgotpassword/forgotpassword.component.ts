@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { CustomValidators } from 'ng2-validation';
 import { Errors } from '../../../shared/models/error.model';
 import { AuthenticationService } from '../../services/authentication.service';
+import { IUser } from '../../../layout/models/user/user.model';
 
 @Component({
   selector: 'app-forgotpassword',
@@ -30,8 +31,13 @@ export class ForgotPasswordComponent implements OnInit {
    this.emailFormControl = this.form.controls['email'];
   }
 
-  forgotPassword() {
-    
+    /**
+  * forgotPassword() - Calls the forgotPassword function of Authentication Service
+  *
+  * @param <IUser> username/email and password
+  * @return <> none
+  */
+  forgotPassword(user: IUser) {
   }
 
 

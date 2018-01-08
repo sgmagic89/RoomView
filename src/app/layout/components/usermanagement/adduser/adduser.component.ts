@@ -24,6 +24,12 @@ export class AdduserComponent implements OnInit {
     );
   }
 
+   /**
+    * addThisUser() - Call the createUser function of user service
+    It collects the user data from the UserDetails form by subscribing the userFormData$ observable of user service.
+    * @param <None> No Parameter
+    * @return <None> No return value
+    */
   addThisUser() {
     let userToCreate: IUser;
     this.userService.userFormData$.subscribe(

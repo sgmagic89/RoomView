@@ -19,6 +19,11 @@ export class ProfileComponent implements OnInit {
     );
   }
 
+  /**
+    * updateProfile() - Call the updateProfile function of user service
+    * @param <None> No Parameter
+    * @return <None> No return value
+    */
   updateProfile() {
   }
 

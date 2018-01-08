@@ -31,6 +31,11 @@ export class SystemconfigrationComponent implements OnInit {
     this.initForm();
   }
 
+  /**
+    * initForm() - Initialize the form
+    * @param <None> No Parameter
+    * @return <None> No return value
+    */
   initForm() {
     this.form = this.fb.group({
       // tslint:disable-next-line:max-line-length
@@ -39,6 +44,11 @@ export class SystemconfigrationComponent implements OnInit {
    this.systemTimeFormControl = this.form.controls['systemTime'];
   }
 
+    /**
+    * initErrorModel() - Initialize the error model for the form
+    * @param <None> No Parameter
+    * @return <None> No return value
+    */
   initErrorModel() {
     this.errorsmodel = this.systemErrorModelFactory.create(this.errors);
     this.errors$ = this.errorsmodel.data$;
@@ -47,6 +57,11 @@ export class SystemconfigrationComponent implements OnInit {
   });
   }
 
+   /**
+    * saveSmtpConfiguration() - Save the entered system configuration in database by calling the API
+    * @param <None> No Parameter
+    * @return <None> No return value
+    */
   saveSystemConfiguration() {
   }
 

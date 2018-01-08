@@ -17,7 +17,12 @@ export class AppValidateDirective {
     constructor ()  {
     }
 
-
+    /**
+    * validateField() - The function executes on focus out from any input field.
+    It finds out the case for the input and executes the validations defined for it and set the error model accordingly
+    * @param <None> No parameters
+    * @return <None> No return
+    */
     @HostListener('focusout')
     validateField() {
     this.errors = this.errorsModel.get();

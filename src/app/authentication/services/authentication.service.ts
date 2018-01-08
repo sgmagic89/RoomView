@@ -25,7 +25,12 @@ constructor(private apiService: ApiService,
     this.authState$ = this.model.data$;
  }
 
-
+ /**
+* login() - Makes a call to the login API to get the token
+*
+* @param <IUser> username/email and password
+* @return <Observable> Observable of type AuthState notifying if the login was successful or un-successful
+*/
 public login(user: IUser): Observable<AuthState> {
     const apiSubscription: Subscription = this.apiService.authentication_login(user.username, user.password)
     .subscribe(

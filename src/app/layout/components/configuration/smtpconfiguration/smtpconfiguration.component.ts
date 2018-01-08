@@ -37,6 +37,11 @@ export class SmtpconfigurationComponent implements OnInit {
     this.initForm();
   }
 
+   /**
+    * initForm() - Initialize the form
+    * @param <None> No Parameter
+    * @return <None> No return value
+    */
   initForm() {
     this.form = this.fb.group({
       // tslint:disable-next-line:max-line-length
@@ -51,6 +56,11 @@ export class SmtpconfigurationComponent implements OnInit {
    this.smtpServerPortFormControl = this.form.controls['smtpServerPort'];
   }
 
+   /**
+    * initErrorModel() - Initialize the error model for the form
+    * @param <None> No Parameter
+    * @return <None> No return value
+    */
   initErrorModel() {
     this.errorsmodel = this.smtpErrorModelFactory.create(this.errors);
     this.errors$ = this.errorsmodel.data$;
@@ -62,9 +72,19 @@ export class SmtpconfigurationComponent implements OnInit {
   });
   }
 
+   /**
+    * saveSmtpConfiguration() - Save the entered smtp configuration in database by calling the API
+    * @param <None> No Parameter
+    * @return <None> No return value
+    */
   saveSmtpConfiguration() {
   }
 
+  /**
+    * resetForm() - Reset the form
+    * @param <None> No Parameter
+    * @return <None> No return value
+    */
   resetForm() {
     this.form.reset();
   }

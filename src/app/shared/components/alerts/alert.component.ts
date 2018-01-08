@@ -32,18 +32,30 @@ export class AlertComponent implements OnInit {
             this.alert = alert;
 
         });
+
+        // listens for any click and calls the removeAlert() to close the alert
         window.addEventListener('click', (event) => {
             this.removeAlert();
           });
     }
 
+     /**
+    * removeAlert() - Close an opened alert message
+    * @param <None> No parameters
+    * @return <None> No return value
+    */
     removeAlert() {
             this.visible = false;
             this.alert = null;
             this.alertService.clear();
     }
 
-    cssClass(alert: Alert) {
+    /**
+    * cssClass() - Returns the css class based on the alert type
+    * @param <Alert> alert to show
+    * @return <string> the custom css class
+    */
+    cssClass(alert: Alert): string {
         if (!alert) {
             return;
         }

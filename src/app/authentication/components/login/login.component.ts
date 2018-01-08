@@ -43,6 +43,12 @@ constructor(private authService: AuthenticationService,
    this.passwordFormControl = this.form.controls['password'];
   }
 
+    /**
+  * login() - Calls the login function of Authentication Service
+  *
+  * @param <IUser> username/email and password
+  * @return <> none
+  */
   login() {
     const user: IUser = { username: this.emailFormControl.value, password: this.passwordFormControl.value };
     this.authService.login(user);

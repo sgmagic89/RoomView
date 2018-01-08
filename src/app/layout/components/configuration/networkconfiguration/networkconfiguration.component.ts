@@ -43,6 +43,11 @@ export class NetworkconfigurationComponent implements OnInit {
     this.initForm();
   }
 
+  /**
+    * initForm() - Initialize the form
+    * @param <None> No Parameter
+    * @return <None> No return value
+    */
   initForm() {
     this.form = this.fb.group({
       networkName: new FormControl(null, Validators.compose([Validators.required])),
@@ -58,6 +63,11 @@ export class NetworkconfigurationComponent implements OnInit {
    this.threadPanIdFormControl = this.form.controls['threadPanId'];
   }
 
+   /**
+    * initErrorModel() - Initialize the error model for the form
+    * @param <None> No Parameter
+    * @return <None> No return value
+    */
   initErrorModel() {
     this.errorsmodel = this.networkErrorModelFactory.create(this.errors);
     this.errors$ = this.errorsmodel.data$;
@@ -70,6 +80,11 @@ export class NetworkconfigurationComponent implements OnInit {
   });
   }
 
+  /**
+    * getNetworkConfiguration() - Gets the network configuration by calling the API and sets the form fields
+    * @param <None> No Parameter
+    * @return <None> No return value
+    */
   getNetworkConfiguration() {
     this.configApi.netwrokSettings$.subscribe(
       data => {
@@ -82,6 +97,11 @@ export class NetworkconfigurationComponent implements OnInit {
     );
   }
 
+  /**
+    * saveNetworkConfiguration() - Save the entered network configuration in database by calling the API
+    * @param <None> No Parameter
+    * @return <None> No return value
+    */
   saveNetworkConfiguration() {
     const networkConfig: INetworkSetting = {
       networkName: this.networkNameFormControl.value,
@@ -93,6 +113,11 @@ export class NetworkconfigurationComponent implements OnInit {
     this.configApi.setNetworkSettings(networkConfig);
   }
 
+  /**
+    * resetForm() - Reset the form
+    * @param <None> No Parameter
+    * @return <None> No return value
+    */
   resetForm() {
     this.form.reset();
   }

@@ -5,6 +5,11 @@ export class LocalStorageService {
 
 constructor() { }
 
+/**
+    * getItem() - Get an item from local storage
+    * @param <string> the key for the item to get
+    * @return <any> Returns the item if found
+    */
 getItem(key: string): any {
     let item: any = localStorage.getItem(key);
     if ( item !== null) {
@@ -17,6 +22,11 @@ getItem(key: string): any {
     return item;
 }
 
+/**
+    * storeItem() - Store an item in the local storage
+    * @param <string, any> the key for the item to store, data to store
+    * @return <None> No return value
+    */
 storeItem(key: string, itemToStore: any) {
     if (localStorage.getItem(key) !== null) {
         localStorage.removeItem(key);
@@ -24,6 +34,11 @@ storeItem(key: string, itemToStore: any) {
     localStorage.setItem(key, this.Encrypt(itemToStore));
 }
 
+/**
+    * clearItem() - Deletes an item from local storage
+    * @param <string, boolean> the key for the item to delete, whether to delete all items from local storage
+    * @return <None> No return value
+    */
 clearItem(key: string, clearAll: boolean = false) {
     if (clearAll) {
         localStorage.clear();
@@ -32,6 +47,11 @@ clearItem(key: string, clearAll: boolean = false) {
     }
 }
 
+/**
+    * Encrypt() - Encrypts data
+    * @param <any> The object to encrypt
+    * @return <string> returns the encrypted value
+    */
 Encrypt(data: any): string {
     if (data !== null) {
     return CryptoJS.AES.encrypt(JSON.stringify(data), 'tokencypherkey').toString();
@@ -39,6 +59,11 @@ Encrypt(data: any): string {
     return null;
 }
 
+/**
+    * Decrypt() - Decrypts data
+    * @param <string> The key of the object to decrypt
+    * @return <string> returns the decrypted object
+    */
 Decrypt(key: string): any {
     if (key !== null) {
     const bytes  = CryptoJS.AES.decrypt(key, 'tokencypherkey');

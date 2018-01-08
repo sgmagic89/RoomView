@@ -26,15 +26,33 @@ export class UsermanagementComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+    * startEdit() - Find the data to edit and set the edit user form data
+    Then it opens the EditUser Component in modal popup
+    * @param <number> The row number of the data to edit
+    * @return <None> No return value
+    */
   startEdit(rowIndex: number) {
     this.userService.setUserFormData(this.rows[rowIndex]);
     const modalRef = this.modalService.open(EdituserComponent,{backdrop: "static"});
   }
 
+   /**
+    * startDelete() - Find the data to delete and call the deleteUser() of user service
+    It opens a confirmation box before deleting the record
+    * @param <number> The row number of the data to delete
+    * @return <None> No return value
+    */
   startDelete(rowIndex: number) {
 
   }
 
+   /**
+    * addNewUser() - Initialize the add user form data to blank
+    Then it opens the AddUser Component in modal popup
+    * @param <None> No parameters
+    * @return <None> No return value
+    */
   addNewUser() {
     this.userService.setUserFormData(initUser);
     const modalRef = this.modalService.open(AdduserComponent, {backdrop: "static"});
