@@ -18,6 +18,7 @@ import { LocalStorageService } from './services/localstorage/localstorage.servic
 import { AlertService } from './services/alert/alert.service';
 import { AuthGuard } from '../authentication/services/authguard.service';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { ApiResponseResolverService } from './services/api/api.response.resolver.service';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ export class SharedModule {
             ApiService,
             LocalStorageService,
             AuthGuard,
-            AlertService
+            AlertService,
+            ApiResponseResolverService
         ],
       };
     }

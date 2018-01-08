@@ -8,6 +8,8 @@ import { LocalStorageService } from '../../shared/services/localstorage/localsto
 import { AlertService } from '../../shared/services/alert/alert.service';
 import { IUser } from '../../layout/models/user/user.model';
 import { AuthState, initAuthState } from '../models/authstate.model';
+import { ApiResponseResolverService } from '../../shared/services/api/api.response.resolver.service';
+import { UserService } from '../../layout/services/user/user.service';
 
 @Injectable()
 export class AuthenticationService {
@@ -20,7 +22,8 @@ constructor(private apiService: ApiService,
     private modelFactory: ModelFactory<AuthState>,
     private storageService: LocalStorageService,
     private router: Router,
-    private alertService: AlertService ) {
+    private alertService: AlertService,
+    private apiRespResolver: ApiResponseResolverService ) {
     this.model = this.modelFactory.create(initAuthState);
     this.authState$ = this.model.data$;
  }
@@ -36,25 +39,16 @@ public login(user: IUser): Observable<AuthState> {
     .subscribe(
         (response) => {
             if ( response ) {
-                const authState = this.model.get();
-                authState.isLoggedIn = true;
-                authState.user.username = user.username;
-                authState.user.password = null;
-                authState.token = response.token;
-                authState.user.role = response.role;
+                let authState = this.model.get();
+                authState = this.apiRespResolver.Authentication_Login_Resolver(response);
                 this.model.set(authState);
                 this.storageService.storeItem('token', authState.token );
                 this.router.navigate(['/portal']);
             }
         },
         (error) => {
-            const authState = this.model.get();
-            authState.isLoggedIn = false;
-            authState.user.username = null;
-            authState.user.password = null;
-            authState.token = null;
-            // authState.user.role = error.messages.toString();
-            authState.user.role = null;
+            let authState = this.model.get();
+            authState = this.apiRespResolver.Authentication_Login_Resolver(error);
             this.model.set(authState);
             this.router.navigate(['/portal']);
             this.alertService.success('logged in successfully!!');

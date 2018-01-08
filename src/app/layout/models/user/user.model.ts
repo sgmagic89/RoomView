@@ -1,6 +1,7 @@
 import { Roles } from './roles.model';
 
 export interface IUser {
+    userId?: number;
     username: string;
     password: string;
     role?: Roles;
@@ -10,6 +11,7 @@ export interface IUser {
 }
 
 export const initUser: IUser = {
+    userId: null,
     username: null,
     password: null,
     role: null,

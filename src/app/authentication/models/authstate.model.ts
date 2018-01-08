@@ -8,7 +8,7 @@ export interface AuthState {
 }
 
 export const initAuthState: AuthState = {
-    user: {username: null, password: null, role: null},
+    user: {userId: null, username: null, password: null, role: null},
     isLoggedIn: false,
     token: null,
     error: null

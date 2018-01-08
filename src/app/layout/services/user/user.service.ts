@@ -4,6 +4,7 @@ import { IUser, initUser } from '../../models/user/user.model';
 import { Model, ModelFactory } from 'ngx-model';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
+import { AuthenticationService } from '../../../authentication/services/authentication.service';
 @Injectable()
 export class UserService {
 
@@ -16,18 +17,40 @@ export class UserService {
     public userFormValidityModel: Model<boolean>;
     public userFormValidity$: Observable<boolean>;
 
+    private currentUserModel: Model<IUser>;
+    public currentUser$: Observable<IUser>;
+
 constructor(private api: ApiService,
     private userModelFactory: ModelFactory<IUser[]>,
     private userFormDataModelFactory: ModelFactory<IUser>,
-    private userFormValidityModelFactory: ModelFactory<boolean>) {
-    this.usersModel = userModelFactory.create(Array.of(initUser));
+    private userFormValidityModelFactory: ModelFactory<boolean>,
+    private currentUserModelFactory: ModelFactory<IUser>,
+    private authenticationService: AuthenticationService) {
+    this.usersModel = this.userModelFactory.create(Array.of(initUser));
     this.users$ = this.usersModel.data$;
 
-    this.userFormDataModel =  userFormDataModelFactory.create(initUser);
+    this.userFormDataModel = this.userFormDataModelFactory.create(initUser);
     this.userFormData$ = this.userFormDataModel.data$;
 
     this.userFormValidityModel = this.userFormValidityModelFactory.create(false);
     this.userFormValidity$ = this.userFormValidityModel.data$;
+
+    this.currentUserModel = this.currentUserModelFactory.create(initUser);
+    this.currentUser$ = this.currentUserModel.data$;
+}
+
+/**
+    * getCurrentUser() - Get the currently logged in user data
+    It gets the data by communicating with Authentication Service and set the current user model
+    * @param <None> User data to set
+    * @return <None> No Return value
+    */
+public setCurrentUser() {
+    this.authenticationService.authState$.subscribe(
+        state => {
+            this.currentUserModel.set(state.user);
+        }
+    );
 }
 
 /**
